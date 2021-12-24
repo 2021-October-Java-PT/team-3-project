@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@200&family=Mukta:wght@200&family=Open+Sans+Condensed:wght@300&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bebas Neue', cursive;
+
+}
+header{
+    position: relative;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .logo{
+    position: relative;
+    float: left;
+    width: 250px;
+    
+}
+.group{
+    position: relative;
+    display: flex;
+    z-index: 9999;
+}
+.group .navbar ul{
+    list-style: none;
+}
+.group .navbar ul li{
+    position: relative;
+    float: left;
+}
+.group .navbar ul li a{
+    font-size: 20px;
+    padding: 20px;
+    color: #545454;
+    display: block;
+}
+.group .navbar ul li a:hover{
+    background: #d9d9d9;
+    color: #fff;
+}
+.group .navbar ul li ul{
+    position: absolute;
+    left: 0;
+    width: 200px;
+    background: #fff;
+    color: #d9d9d9;
+    display: none;
+}
+.group .navbar ul li ul li{
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.group .navbar ul li ul li ul{
+    left: 200px;
+    top: 0;
+}
+.group .navbar ul li:focus-within > ul,
+.group .navbar ul li:hover > ul{
+    display: initial;
+
+}
+#menu-bar{
+    display: none;
+}
+.group label{
+    font-size: 20px;
+    color: #545454;
+    cursor: pointer;
+    display: none;
+}
+
+
+.banner{
+    position: relative;
+    width: 100%;
+    z-index: 10;
+    
+}
+.banner .bg{
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    background: #545454;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+.content{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content h2{
+    position: relative;
+    color: #fff;
+    font-size: 6em;
+    text-align: center;
+}
+.btn{
+    display: inline-block;
+    background: #ff5a26;
+    color:#fff;
+    padding: 20px 40px;
+    text-decoration: none;
+    font-size: 1em;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+.searchBox{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #fff;
+    padding: 30px 50px;
+    transform: translateY(50%);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+.searchBox .inputBox{
+    margin: 0 20px;
+}
+.searchBox .inputBox p{
+    color: #222;
+    margin-bottom: 10px;
+}
+.searchBox .inputBox p.white {
+    color: #fff;
+}
+.searchBox .inputBox input{
+    border: 1px solid #222;
+    outline: none;
+    padding: 10px;
+    width: 100%;
+    min-width: 150px;
+    font-size: 1.1em;
+}
+.searchBox .inputBox input[type="Submit"]{
+    outline: none;
+    border: none;
+    background: #ff5a26;
+    color: #fff;
+    cursor: pointer;
+    letter-spacing: 2px;
+    padding: 13px;
+
+}
+.toggleNav{
+    display: none;
+}
+
+
+
+
+
+
+@media(max-width:991px){
+    .group{
+        padding: 20px;
+    }
+    .group label{
+        display: initial;
+    }
+    .group .navbar{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: #fff;
+        border-top: 1px solid rgba(0,0,0,.1);
+        display: none;
+    }
+    .group .navbar ul li{
+        width: 100%
+    }
+    .group .navbar ul li ul{
+        position: relative;
+        width: 100%;
+    }
+    .group .navbar ul li ul li{
+        background: #fff;
+    }
+    .group .navbar ul li ul li ul{
+        width:100%;
+        left: 0;
+    }
+    #menu-bar:checked ~ .navbar{
+        display: initial;
+    }
+
+}
+  
