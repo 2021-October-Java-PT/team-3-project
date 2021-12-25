@@ -1,8 +1,5 @@
 package org.wecancodeit.com.project.models;
 
-
-import javax.persistence.*;
-
 @Entity
 public class Country {
     @Id
@@ -27,8 +24,18 @@ public class Country {
         return id;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
+    public Continent getContinent(){
+        return continent;
+    }
+
+    public Island getIsland(){
+        return island;
+    }
+
+
 }
+
