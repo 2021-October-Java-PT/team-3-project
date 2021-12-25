@@ -1,4 +1,4 @@
-package org.wecancodeit.com.project;
+package org.wecancodeit.com.project.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.wecancodeit.com.project.models.Country;
+import org.wecancodeit.com.project.repositories.CountryRepository;
 
 import javax.annotation.Resource;
 
