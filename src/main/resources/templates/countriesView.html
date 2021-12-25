@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Countrie</title>
 </head>
 <body>
+
+<div>
+    <ul th:each="country: ${countries}">
+        <li><a th:href="@{/country(id=${country.id})}" th:text="${country.name}"></a></li>
+
+    </ul>
+</div>
 
 </body>
 </html>
