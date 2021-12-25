@@ -1,34 +1,25 @@
 package org.wecancodeit.com.project.models;
 
-import org.wecancodeit.com.project.Continent;
-
-import javax.persistence.ManyToOne;
-import javax.persistence.*;
-
 @Entity
 public class Country {
     @Id
     @GeneratedValue
 
-    private long id;
+    private Long id;
     private String name;
-    private String description;
-    @ManyToOne
+
+    @OneToOne
     private Continent continent;
-    @ManyToOne
+    @OneToMany
+    private IslandCluster islandCluster;
+    @OneToMany
     private Island island;
 
-    public Country(){
-
+    public Country(Long id, String name, Continent continent){
+        this.name=name;
+        this.id=id;
+        this.continent=continent;
     }
-
-    public Country(String name, String description, Continent continent, Island island) {
-        this.name = name;
-        this.description = description;
-        this.continent = continent;
-        this.island = island;
-    }
-
     public long getId() {
         return id;
     }
@@ -47,3 +38,4 @@ public class Country {
 
 
 }
+
