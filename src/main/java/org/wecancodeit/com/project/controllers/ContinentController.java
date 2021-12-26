@@ -2,13 +2,11 @@ package org.wecancodeit.com.project.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.wecancodeit.com.project.models.Continent;
 import org.wecancodeit.com.project.repositories.ContinentRepository;
 
-import javax.annotation.Resource;
-import java.util.Optional;
 
 @Controller
 public class ContinentController {
@@ -19,12 +17,15 @@ public class ContinentController {
         this.continentRepo=continentRepo;
     }
 
-    @RequestMapping("/continent/{id}")
-    public String listSingleContinent(@PathVariable Long id, Model model){
+    @RequestMapping("/continents")
+    public String findAllContinents(Model model){
+        model.addAttribute("continentsList", continentRepo.findAll());
+        return "continentsTemplate";
+    }
 
-        Optional<Continent> foundContinent = continentRepo.findById(id);
-        model.addAttribute("singleContinent", foundContinent.get());
-
-        return "continentList.html";
+    @RequestMapping("/continent")
+    public String findOneContinent(@RequestParam(value="id")Long id, Model model){
+        model.addAttribute("continent", continentRepo.findOne(id));
+        return "continentTemplate";
     }
 }
