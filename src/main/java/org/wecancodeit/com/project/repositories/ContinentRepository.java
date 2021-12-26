@@ -9,10 +9,10 @@ import java.util.Map;
 
 public interface ContinentRepository extends CrudRepository<Continent, Long> {
 
-    Map<Long, IslandCluster> continentList = new HashMap<>();
+    Map<Long, Continent> continentList = new HashMap<>();
 
 
-    default IslandCluster findOne(Long id) {
+    default Continent findOne(Long id) {
         return continentList.get(id);
     }
 
