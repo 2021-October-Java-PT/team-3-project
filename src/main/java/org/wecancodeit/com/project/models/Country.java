@@ -1,5 +1,7 @@
 package org.wecancodeit.com.project.models;
 
+import javax.persistence.*;
+
 @Entity
 public class Country {
     @Id
