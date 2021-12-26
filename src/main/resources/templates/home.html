@@ -4,13 +4,11 @@
     <meta-charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <title>JAC ENTERPRISES</title>
-    <link rel="stylesheet" href=".\css\style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <img class="logo" src=".\images\logo2.png" alt="logo">
-        <!-- <input type="checkbox" id="menu-bar">
-        <label for="menu-bar">Menu</label> -->
+        <img class="logo" src="assets\logo2.png" alt="logo">
         <div class="group">
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">Menu</label>
@@ -28,10 +26,11 @@
                 </li>
                 <li><a href="#">Travel Info</a>
                     <ul>
-                        <li><a href="#">Group Packages</a></li>
+                        <li><a href="#">Tour Packages</a></li>
                         <li><a href="#">Visa Requirements</a></li>
                         <li><a href="#">Covid Restrictions</a></li>
                         <li><a href="#">Flight Deals</a></li>
+                        <li><a href="#">Refunds/Cancellations</a></li>
                     </ul>
                 </li>
                 <li><a href="#">About Us</a>
@@ -47,20 +46,12 @@
                     </ul>
                 </li>
             </ul>
-            <!-- <ul class="action">
-                <li><a href="#"><ion-icon name="search-outline"></ion-icon></a></li>
-                <li><a href="#"><ion-icon name="person-outline"></ion-icon></a></li>
-                <div class="toggleNav">
-                    <ion-icon name="menu-outline"></ion-icon>
-                    <ion-icon name="close-circle-outline"></ion-icon>
-                </div>
-                </ul> -->
             </nav>
         </div>
     </header>
     <div class="banner">
         <div class="bg">
-            <img src="src\main\resources\images\island.png" class="cover">
+            <img src="assets/island.png" class="cover">
             <div class="content">
                 <h2>UNIQUE ISLAND ADVENTURES</h2>
                 <a href="#" class="btn">BOOK NOW</a>
@@ -85,7 +76,48 @@
             </div>
         </div>
     </div>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <div class="adventureTitle">
+        <h2>CHOOSE YOUR ADVENTURE</h2>
+    </div>
+    <div class="advgridContainer">
+        <div class="advGrids">
+            <div class="AdvGrid1">
+                <div class="advcont">
+                    <img src="assets\swimWithSharks.png" alt="swim with sharks">
+                </div>
+                <div class="details">
+                <h3>DARING</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                     aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+            <div class="AdvGrid2">
+                <div class="advcont">
+                    <img src="assets\luxury.png" alt="sailboat">
+                </div>
+                <div class="details">
+                <h3>LUXURY</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                     aliquip ex ea commodo consequat.</p>
+             </div>
+            </div>
+            <div class="AdvGrid3">
+                <div class="advcont">
+                    <img src="assets\getWrecked.png" alt="scuba">
+                </div>
+                <div class="details">
+                    <h3>GET WRECKED</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                     aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

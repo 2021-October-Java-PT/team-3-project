@@ -159,10 +159,45 @@ header .logo{
     cursor: pointer;
     letter-spacing: 2px;
     padding: 13px;
+}
+.adventureTitle{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 40px;
 
 }
-.toggleNav{
-    display: none;
+.advContainer{
+    background-color: #151320;
+    height: 100vh;
+    display: grid;
+    place-items: center center;
+    margin-top: 100px;
+}
+.advGrids{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    padding: 20px;
+    grid-gap: 40px;
+
+}
+.advgrid{
+    background-color: #545454;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
+}
+.advcont{
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+}
+img{
+    width: 100%;
+    display: block;
+    border-radius: 20px 20px 0 0;
 }
 
 
@@ -203,4 +238,3 @@ header .logo{
     }
 
 }
-  
