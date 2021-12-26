@@ -2,9 +2,6 @@ package org.wecancodeit.com.project.models;
 
 
 
-import org.wecancodeit.com.project.Continent;
-import org.wecancodeit.com.project.Country;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;

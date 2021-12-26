@@ -9,7 +9,7 @@ import org.wecancodeit.com.project.models.Ocean;
 import org.wecancodeit.com.project.repositories.OceanRepository;
 
 import javax.annotation.Resource;
-import java.util.Optional;
+
 
 @Controller
 public class OceanController {
@@ -25,7 +25,7 @@ public class OceanController {
 
     @RequestMapping("/ocean/{name}")
     public String listOcean(@PathVariable Long id, Model model){
-        Ocean retrievedOcean = oceanRepo.findOcean(id);
+        Ocean retrievedOcean = oceanRepo.findOne(id);
         model.addAttribute("ocean", retrievedOcean);
         return "oceanView";
     }

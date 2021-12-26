@@ -4,18 +4,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.wecancodeit.com.project.models.Continent;
 import org.wecancodeit.com.project.repositories.ContinentRepository;
+
+import javax.annotation.Resource;
 
 
 @Controller
 public class ContinentController {
+
+    @Resource
     private ContinentRepository continentRepo;
 
-
-    public ContinentController(ContinentRepository continentRepo){
-        this.continentRepo=continentRepo;
-    }
 
     @RequestMapping("/continents")
     public String findAllContinents(Model model){

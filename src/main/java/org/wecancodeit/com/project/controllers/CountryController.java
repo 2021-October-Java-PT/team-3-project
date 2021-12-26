@@ -23,8 +23,8 @@ public class CountryController {
     }
 
     @GetMapping("/country/{name}")
-    public String displaySingleCountry(@PathVariable String name, Model model){
-        Country retrievedCountry = countryRepo.findCountryByName(name);
+    public String displaySingleCountry(@PathVariable Long id, Model model){
+        Country retrievedCountry = countryRepo.findOne(id);
         model.addAttribute("country", retrievedCountry);
         return"countryView";
     }

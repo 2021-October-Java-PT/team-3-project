@@ -2,16 +2,16 @@ package org.wecancodeit.com.project.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.wecancodeit.com.project.models.IslandCluster;
 import org.wecancodeit.com.project.repositories.IslandClusterRepository;
 
-import java.util.Optional;
+import javax.annotation.Resource;
 
 @Controller
 public class IslandClusterController {
+
+    @Resource
     private IslandClusterRepository islandClusterRepo;
 
 
