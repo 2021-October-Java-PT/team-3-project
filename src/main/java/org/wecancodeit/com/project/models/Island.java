@@ -1,6 +1,7 @@
 package org.wecancodeit.com.project.models;
 
 
+
 import org.wecancodeit.com.project.Continent;
 import org.wecancodeit.com.project.Country;
 
@@ -8,6 +9,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+
+import javax.persistence.*;
+
 
 @Entity
 public class Island {
@@ -22,16 +26,19 @@ public class Island {
     private Country country;
     @ManyToOne
     private Continent continent;
+    @OneToOne
+    private IslandCluster islandCluster;
 
     public Island(){
 
     }
 
-    public Island(String name, String description, Country country, Continent continent){
+    public Island(String name, String description, Country country, Continent continent, IslandCluster islandCluster){
         this.name=name;
         this.description=description;
         this.country=country;
         this.continent=continent;
+        this.islandCluster=islandCluster;
     }
 
     public String getName(){
@@ -54,4 +61,7 @@ public class Island {
         return id;
     }
 
+    public IslandCluster getIslandCluster() {
+        return islandCluster;
+    }
 }
