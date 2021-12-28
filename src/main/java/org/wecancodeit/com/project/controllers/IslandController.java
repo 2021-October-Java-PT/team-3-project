@@ -22,9 +22,9 @@ public class IslandController {
         return "islandsView";
     }
 
-    @GetMapping("/islands/{name}")
-    public String displaySingleIsland(@PathVariable String name, Model model){
-        Island retrieveIsland = islandRepo.findIslandByName(name);
+    @GetMapping("/island/{id}")
+    public String displaySingleIsland(@PathVariable Long id, Model model){
+        Island retrieveIsland = islandRepo.findOne(id);
         model.addAttribute("island", retrieveIsland);
         return "islandView";
     }
