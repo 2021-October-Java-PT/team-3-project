@@ -1,48 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta-charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <title>JAC ENTERPRISES</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/styles/style.css">
 </head>
 <body>
     <header>
-        <img class="logo" src="assets\logo2.png" alt="logo">
+        <img class="logo" th:src="/images/logo2.png" alt="logo">
         <div class="group">
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">Menu</label>
             <nav class="navbar">
                 <ul>
-                <li><a href="#">Destinations</a>
+                <li><a th:href="#">Destinations</a>
                     <ul>
-                        <li><a href="#">North America</a></li>
-                        <li><a href="#">South America</a></li>
-                        <li><a href="#">Europe</a></li>
-                        <li><a href="#">Africa</a></li>
-                        <li><a href="#">Asia</a></li>
-                        <li><a href="#">Australia</a></li>
+                        <li><a th:href="#">North America</a></li>
+                        <li><a th:href="#">South America</a></li>
+                        <li><a th:href="#">Europe</a></li>
+                        <li><a th:href="#">Africa</a></li>
+                        <li><a th:href="#">Asia</a></li>
+                        <li><a th:href="#">Australia</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Travel Info</a>
+                <li><a th:href="#">Travel Info</a>
                     <ul>
-                        <li><a href="#">Tour Packages</a></li>
-                        <li><a href="#">Visa Requirements</a></li>
-                        <li><a href="#">Covid Restrictions</a></li>
-                        <li><a href="#">Flight Deals</a></li>
-                        <li><a href="#">Refunds/Cancellations</a></li>
+                        <li><a th:href="#">Tour Packages</a></li>
+                        <li><a th:href="#">Visa Requirements</a></li>
+                        <li><a th:href="#">Covid Restrictions</a></li>
+                        <li><a th:href="#">Flight Deals</a></li>
+                        <li><a th:href="#">Refunds/Cancellations</a></li>
                     </ul>
                 </li>
-                <li><a href="#">About Us</a>
+                <li><a th:href="#">About Us</a>
                     <ul>
-                        <li><a href="#">Meet Our Team</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a th:href="#">Meet Our Team</a></li>
+                        <li><a th:href="#">Contact Us</a></li>
                     </ul>
                 </li>
-                <li><a href="#">My Account</a>
+                <li><a th:href="#">My Account</a>
                     <ul>
-                        <li><a href="#">My Travel History</a></li>
-                        <li><a href="#">My Booking</a></li>
+                        <li><a th:href="#">My Travel History</a></li>
+                        <li><a th:href="#">My Booking</a></li>
                     </ul>
                 </li>
             </ul>
@@ -51,10 +51,10 @@
     </header>
     <div class="banner">
         <div class="bg">
-            <img src="assets/island.png" class="cover">
+            <img th:src="/images/island.png" class="cover">
             <div class="content">
                 <h2>UNIQUE ISLAND ADVENTURES</h2>
-                <a href="#" class="btn">BOOK NOW</a>
+                <a th:href="#" class="btn">BOOK NOW</a>
             </div>
             <div class="searchBox">
                 <div class="inputBox">
@@ -83,7 +83,7 @@
         <div class="advGrids">
             <div class="AdvGrid1">
                 <div class="advcont">
-                    <img src="assets\swimWithSharks.png" alt="swim with sharks">
+                    <img th:src="/images/swimWithSharks.png" alt="swim with sharks">
                 </div>
                 <div class="details">
                 <h3>DARING</h3>
@@ -95,7 +95,7 @@
             </div>
             <div class="AdvGrid2">
                 <div class="advcont">
-                    <img src="assets\luxury.png" alt="sailboat">
+                    <img th:src="/images/luxury.png" alt="sailboat">
                 </div>
                 <div class="details">
                 <h3>LUXURY</h3>
@@ -107,7 +107,7 @@
             </div>
             <div class="AdvGrid3">
                 <div class="advcont">
-                    <img src="assets\getWrecked.png" alt="scuba">
+                    <img th:src="/images/getWrecked.png" alt="scuba">
                 </div>
                 <div class="details">
                     <h3>GET WRECKED</h3>

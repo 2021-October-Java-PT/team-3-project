@@ -23,8 +23,7 @@ public class IslandCluster {
 
     }
 
-    public IslandCluster(Long id, String islandClusterName, Country country, Continent continent){
-        this.id = id;
+    public IslandCluster(String islandClusterName, Country country, Continent continent){
         this.islandClusterName = islandClusterName;
         this.country = country;
         this.continent = continent;

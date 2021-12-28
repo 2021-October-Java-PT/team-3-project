@@ -25,9 +25,8 @@ public class Continent {
 
     }
 
-    public Continent(Long id, String continentName) {
+    public Continent(String continentName) {
         this.continentName = continentName;
-        this.id=id;
     }
 
     public Long getId() {
