@@ -1,15 +1,54 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contienents</title>
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <title>JAC ENTERPRISES</title>
+    <link rel="stylesheet" href="styles/genericstyle.css">
 </head>
 <body>
-    
     <header>
-        <h1>Contienents</h1>
+        <img class="logo" src="images/logo2.png" alt="logo">
+        <div class="group">
+            <input type="checkbox" id="menu-bar">
+            <label for="menu-bar">Menu</label>
+            <nav class="navbar">
+                <ul>
+                <li><a href="#">Destinations</a>
+                    <ul>
+                        <li th:each="continent: ${continentModel"><a th:href="@{/continent(id=${continent.id})}" th:text="${continent.continentName}"></a></li>
+<!--                        <li><a th:href="#">North America</a></li>-->
+<!--                        <li><a th:href="#">South America</a></li>-->
+<!--                        <li><a th:href="#">Europe</a></li>-->
+<!--                        <li><a th:href="#">Africa</a></li>-->
+<!--                        <li><a th:href="#">Asia</a></li>-->
+<!--                        <li><a th:href="#">Australia</a></li>-->
+                    </ul>
+                </li>
+                <li><a th:href="#">Travel Info</a>
+                    <ul>
+                        <li><a th:href="#">Tour Packages</a></li>
+                        <li><a th:href="#">Visa Requirements</a></li>
+                        <li><a th:href="#">Covid Restrictions</a></li>
+                        <li><a th:href="#">Flight Deals</a></li>
+                        <li><a th:href="#">Refunds/Cancellations</a></li>
+                    </ul>
+                </li>
+                <li><a href="templates/aboutUsView.html">About Us</a>
+                    <ul>
+                        <li><a th:href="#">Meet Our Team</a></li>
+                        <li><a th:href="#">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li><a th:href="#">My Account</a>
+                    <ul>
+                        <li><a th:href="#">My Travel History</a></li>
+                        <li><a th:href="#">My Booking</a></li>
+                    </ul>
+                </li>
+            </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -17,6 +56,52 @@
             <li th:each="continent: ${continentsModel"><a th:href="@{/continent(id=${continent.id})}" th:text="${continent.continentName}"></a></li>
         </ul>
     </main>
+    <footer class="footer-content">
+        <div class="footer-left">
+      <img src="assets\logo2.png">
+            <h3>About <span>JAC ENTERPRISES</span></h3>
 
+            <p class="footer-links">
+                <a href="#">About</a>
+                |
+                <a href="#">Destinations</a>
+                |
+                <a href="#">Travel Info</a>
+                |
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">© 2021 JAC ENTERPRISES Pvt. Ltd.</p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>1234 Lake Drive Unit 12</span>
+                    Cleveland, Ohio - 44101</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>(216) 664-1234</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:contactus@jac-ent.com">contactus@jac-ent.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the company</span>
+                We offer unique island adventures.</p>
+            <div class="footer-icons">
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-instagram"></i></a>
+				<a href="#"><i class="fa fa-linkedin"></i></a>
+				<a href="#"><i class="fa fa-youtube"></i></a>
+			</div>
+        </div>
+    </footer>
 </body>
 </html>
