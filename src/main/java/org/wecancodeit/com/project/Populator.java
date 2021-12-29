@@ -43,14 +43,14 @@ public class Populator implements CommandLineRunner {
          Island jay = new Island("jay", "description", lambu, africa, cluster);
         islandRepo.save(jay);
 
-        Ocean indian = new Ocean("Indian Ocean");
-        oceanRepo.save(indian);
-        Ocean atlantic = new Ocean("Atlantic Ocean");
-        oceanRepo.save(atlantic);
-        Ocean pacific = new Ocean("Pacific Ocean");
-        oceanRepo.save(pacific);
-        Ocean artic = new Ocean("Artic Ocean");
-        oceanRepo.save(artic);
+//        Ocean indian = new Ocean("Indian Ocean");
+//        oceanRepo.save(indian);
+//        Ocean atlantic = new Ocean("Atlantic Ocean");
+//        oceanRepo.save(atlantic);
+//        Ocean pacific = new Ocean("Pacific Ocean");
+//        oceanRepo.save(pacific);
+//        Ocean artic = new Ocean("Artic Ocean");
+//        oceanRepo.save(artic);
 
 
 
