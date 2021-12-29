@@ -44,7 +44,7 @@ public class Populator implements CommandLineRunner {
         oceanRepo.save(pacific);
         Ocean artic = new Ocean("Artic Ocean");
         oceanRepo.save(artic);
-        
+
 
 
     }
