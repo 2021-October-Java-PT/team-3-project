@@ -4,24 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <title>JAC ENTERPRISES</title>
-    <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <header>
-        <img class="logo" th:src="/images/logo2.png" alt="logo">
+        <img class="logo" src="images/logo2.png" alt="logo">
         <div class="group">
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">Menu</label>
             <nav class="navbar">
                 <ul>
-                <li><a th:href="#">Destinations</a>
+                <li><a href="#">Destinations</a>
                     <ul>
-                        <li><a th:href="#">North America</a></li>
-                        <li><a th:href="#">South America</a></li>
-                        <li><a th:href="#">Europe</a></li>
-                        <li><a th:href="#">Africa</a></li>
-                        <li><a th:href="#">Asia</a></li>
-                        <li><a th:href="#">Australia</a></li>
+                        <li th:each="continent: ${continentModel"><a th:href="@{/continent(id=${continent.id})}" th:text="${continent.continentName}"></a></li>
+<!--                        <li><a th:href="#">North America</a></li>-->
+<!--                        <li><a th:href="#">South America</a></li>-->
+<!--                        <li><a th:href="#">Europe</a></li>-->
+<!--                        <li><a th:href="#">Africa</a></li>-->
+<!--                        <li><a th:href="#">Asia</a></li>-->
+<!--                        <li><a th:href="#">Australia</a></li>-->
                     </ul>
                 </li>
                 <li><a th:href="#">Travel Info</a>
@@ -33,7 +34,7 @@
                         <li><a th:href="#">Refunds/Cancellations</a></li>
                     </ul>
                 </li>
-                <li><a th:href="#">About Us</a>
+                <li><a href="templates/aboutUsView.html">About Us</a>
                     <ul>
                         <li><a th:href="#">Meet Our Team</a></li>
                         <li><a th:href="#">Contact Us</a></li>
