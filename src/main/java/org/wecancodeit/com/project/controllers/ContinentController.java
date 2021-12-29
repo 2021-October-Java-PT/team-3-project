@@ -18,13 +18,13 @@ public class ContinentController {
 
     @RequestMapping("/continents")
     public String findAllContinents(Model model){
-        model.addAttribute("continentsList", continentRepo.findAll());
+        model.addAttribute("continentsModel", continentRepo.findAll());
         return "continentsTemplate";
     }
 
     @RequestMapping("/continent")
     public String findOneContinent(@RequestParam(value="id")Long id, Model model){
-        model.addAttribute("continent", continentRepo.findOne(id));
+        model.addAttribute("continentModel", continentRepo.findById(id).get());
         return "continentTemplate";
     }
 }

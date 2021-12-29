@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,10 +13,10 @@
 
     <main>
         <ul>
-            <li th:each="countries: ${continentModel"><a th:href="@{/countries(id=${country.id})}" th:text="${country.name}"></a></li>
+<!--            <li th:each="countries: ${continentModel}"><a th:href="@{/countries(id=${country.id})}" th:text="${country.name}"></a></li>-->
         </ul>
 
-        <p><a id="continentsButton" th:href="/contienents">Back to Contienents List</a></p>
+        <p><a id="continentsButton" th:href="@{/continents}">Back to Contienents List</a></p>
     </main>
     
 </body>
