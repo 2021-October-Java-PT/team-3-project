@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.util.List;
+import java.util.Map;
 
 @Entity
 public class Continent {
@@ -15,11 +17,11 @@ public class Continent {
 
 
     @OneToMany
-    private Country country;
+    private List<Country> countries;
     @OneToMany
-    private Island island;
+    private List<Island> island;
     @OneToMany
-    private IslandCluster islandCluster;
+    private List<IslandCluster> islandCluster;
 
     public Continent(){
 

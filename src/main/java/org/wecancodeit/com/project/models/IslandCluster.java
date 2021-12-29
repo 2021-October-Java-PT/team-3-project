@@ -2,20 +2,21 @@ package org.wecancodeit.com.project.models;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 
 public class IslandCluster {
     @Id
     @GeneratedValue
-    private String islandClusterName;
     private Long id;
+    private String islandClusterName;
 
-    @OneToMany
-    private Island island;
-    @OneToOne
+    @ManyToMany
+    private List<Island> island;
+    @ManyToOne
     private Country country;
-    @OneToOne
+    @ManyToOne
     private Continent continent;
 
 
@@ -38,7 +39,7 @@ public class IslandCluster {
     }
 
     public Island getIsland() {
-        return island;
+        return (Island) island;
     }
 
     public Country getCountry() {
