@@ -2,9 +2,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title th:text="${island.name}">Name</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/genericstyle.css">
+    <title th:text="${islandModel.name}">island</title>
 </head>
 <body>
-    <h1 th:text="${island.name}"></h1>
+<header>
+    <h1 th:text="${islandModel.name}">island</h1>
+</header>
+
+<main>
+
+    <p><a id="islandsButton" th:href="/islands">Back to Islands List</a></p>
+</main>
 </body>
 </html>

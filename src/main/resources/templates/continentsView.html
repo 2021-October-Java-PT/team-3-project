@@ -5,15 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/genericstyle.css">
-    <title>Countries</title>
+
+    <title>Continents</title>
 </head>
 <body>
 
-<div>
+<header>
+    <h1>Continents</h1>
+</header>
+
+<main>
     <ul>
-        <li th:each="countries: ${countryModel}"><a th:href="@{/countries(id=${country.id})}" th:text="${country.name}"></a></li>
+        <li th:each="continent: ${continentsModel}"><a th:href="@{/continent(id=${continent.id})}" th:text="${continent.continentName}"></a></li>
     </ul>
-</div>
+</main>
 
 </body>
 </html>

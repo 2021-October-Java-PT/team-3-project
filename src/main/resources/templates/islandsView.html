@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Islands</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/genericstyle.css">
+
+    <title>islands</title>
 </head>
 <body>
+<header>
     <h1>Islands</h1>
+</header>
+
+<main>
+    <ul>
+        <li th:each="islands: ${islandModel"><a th:href="@{/islands(id=${island.id})}" th:text="${island.name}"></a></li>
+    </ul>
+
+</main>
 </body>
 </html>
