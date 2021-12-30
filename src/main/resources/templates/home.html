@@ -16,15 +16,6 @@
                 <ul>
                 <li><a href="#">Destinations</a>
                     <ul>
-<<<<<<< HEAD
-<!--                        <li th:each="continent: ${continentModel"><a th:href="@{/continent(id=${continent.id})}" th:text="${continent.continentName}"></a></li>-->
-                        <li><a href="#">North America</a></li>
-                        <li><a href="#">South America</a></li>
-                        <li><a href="#">Europe</a></li>
-                        <li><a href="#">Africa</a></li>
-                        <li><a href="#">Asia</a></li>
-                        <li><a href="#">Australia</a></li>
-=======
                         <li th:each="continent: ${continentsModel}"><a th:href="@{/continent(id=${continent.id})}" th:text="${continent.continentName}"></a></li>
 <!--                        <li><a href="#">North America</a></li>-->
 <!--                        <li><a href="#">South America</a></li>-->
@@ -32,7 +23,6 @@
 <!--                        <li><a href="#">Africa</a></li>-->
 <!--                        <li><a href="#">Asia</a></li>-->
 <!--                        <li><a href="#">Australia</a></li>-->
->>>>>>> thyme-bugfix
                     </ul>
                 </li>
                 <li><a href="#">Travel Info</a>

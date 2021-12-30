@@ -2,6 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/genericstyle.css">
     <title>Pick a Country</title>
 </head>
 <body>
@@ -10,6 +13,11 @@
 
     <h1 th:text="${country.name}"></h1>
     <nav><a href="/countries">Back</a></nav>
+
+    <h2>Island Clusters in Country</h2>
+    <ul>
+        <li th:each="islandCluster: ${islandClusterModel"><a th:href="@{/islandCluster(id=${islandCluster.id})}" th:text="${islandCluster.islandClusterName}"></a></li>
+    </ul>
 
 </div>
 
