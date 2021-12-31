@@ -9,11 +9,9 @@
 </head>
 <body>
 
-<div>
-    <ul>
-        <li th:each="countries: ${countryModel}"><a th:href="@{/countries(id=${country.id})}" th:text="${country.name}"></a></li>
-    </ul>
-</div>
 
+        <h2 th:each="country: ${countriesModel}"><a th:href="@{/country(id=${country.id})}" th:text="${country.Name}"></a></h2>
+
+        <a href="/continents">back to continents</a>
 </body>
 </html>

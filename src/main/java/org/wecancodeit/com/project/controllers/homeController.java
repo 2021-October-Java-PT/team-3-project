@@ -25,7 +25,7 @@ public class homeController {
 
 
 
-    @RequestMapping({"/home"})
+    @RequestMapping({"/home","/", ""})
         public String homeData(Model model){
             model.addAttribute("continentsModel", continentRepo.findAll());
             model.addAttribute("countries", countryRepo.findAll());

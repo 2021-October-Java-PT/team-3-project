@@ -45,6 +45,9 @@ public class Country {
     public Island getIsland(){
         return (Island) island;
     }
+     public IslandCluster getIslandCLuster(){
+        return (IslandCluster) islandCluster;
+     }
 
 
 }

@@ -9,17 +9,16 @@
 </head>
 <body>
 
-<div>
 
-    <h1 th:text="${country.name}"></h1>
-    <nav><a href="/countries">Back</a></nav>
-
+<header>
+    <h1 th:text="${countryModel.name}">country</h1>
+</header>
     <h2>Island Clusters in Country</h2>
+<main>
     <ul>
-        <li th:each="islandCluster: ${islandClusterModel"><a th:href="@{/islandCluster(id=${islandCluster.id})}" th:text="${islandCluster.islandClusterName}"></a></li>
+        <li th:each="islandCluster: ${islandClusters}"><a th:href="@{'/islandClusters/' + (id=${islandCluster.id})}"th:text="${islandCluster.islandClusterName"></a></li>
     </ul>
-
-</div>
+</main>
 
 </body>
 </html>
