@@ -2,44 +2,47 @@ package org.wecancodeit.com.project.models;
 
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-
 public class IslandCluster {
     @Id
     @GeneratedValue
-    private Long id;
-    private String islandClusterName;
+    protected Long id;
+    protected String name;
 
-    @ManyToMany
-    private List<Island> island;
+    @OneToMany(mappedBy = "islandCluster")
+    protected List<Island> islands;
     @ManyToOne
-    private Country country;
+    protected Country country;
     @ManyToOne
-    private Continent continent;
+    protected Continent continent;
 
 
     public IslandCluster(){
 
     }
 
-    public IslandCluster(String islandClusterName, Country country, Continent continent){
-        this.islandClusterName = islandClusterName;
+    public IslandCluster(String name, Country country, Continent continent){
+        this.name = name;
         this.country = country;
         this.continent = continent;
     }
 
-    public String getIslandClusterName() {
-        return islandClusterName;
+    public String getName() {
+        return name;
     }
 
     public Long getId() {
         return id;
     }
 
-    public Island getIsland() {
-        return (Island) island;
+    public List<Island> getIsland() {
+        return islands;
     }
 
     public Country getCountry() {
@@ -48,5 +51,9 @@ public class IslandCluster {
 
     public Continent getContinent() {
         return continent;
+    }
+
+    public List<Island> getIslands() {
+        return islands;
     }
 }

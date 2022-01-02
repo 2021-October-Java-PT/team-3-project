@@ -13,12 +13,8 @@
         <h1>Island Clusters</h1>
     </header>
 
-    <main>
-        <ul>
-            <li th:each="islandCluster: ${islandClusterModel"><a th:href="@{/islandCluster(id=${islandCluster.id})}" th:text="${islandCluster.islandClusterName}"></a></li>
-        </ul>
+    <h2 th:each="islandCluster: ${islandClusters}"><a th:href="@{/islandCluster(id=${islandCluster.id})}" th:text="${islandCluster.name}"></a></h2>
 
-        <p><a id="countriesButton" th:href="/countryView">Back to Countries List</a></p>
-    </main>
+        <p><a id="countriesButton" th:href="@{/countries}">Back to Countries List</a></p>
 </body>
 </html>

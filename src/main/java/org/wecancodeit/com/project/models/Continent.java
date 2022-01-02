@@ -11,16 +11,16 @@ public class Continent {
 
     @Id
     @GeneratedValue
-    private Long id;
-    private String continentName;
+    protected Long id;
+    protected String continentName;
 
 
-    @OneToMany
-    private List<Country> countries;
-    @OneToMany
-    private List<Island> island;
-    @OneToMany
-    private List<IslandCluster> islandCluster;
+    @OneToMany(mappedBy = "continent")
+    protected List<Country> countries;
+    @OneToMany(mappedBy = "islandCluster")
+    protected List<Island> island;
+    @OneToMany(mappedBy = "country")
+    protected List<IslandCluster> islandClusters;
 
     public Continent(){
 
@@ -38,5 +38,8 @@ public class Continent {
         return continentName;
     }
 
-    //make countries getter
+    public List<Country> getCountries(){
+        return countries;
+    }
+
 }
