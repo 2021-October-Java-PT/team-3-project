@@ -11,7 +11,7 @@ public class AboutUsController {
 
     @RequestMapping({"/aboutus"})
     public String displayAboutUs () {
-        return"aboutUs";
+        return"aboutUsView";
     }
 
 }

@@ -1,21 +1,26 @@
 package org.wecancodeit.com.project.models;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class Country {
 
     @Id
     @GeneratedValue
-    private Long id;
-    private String name;
+    protected Long id;
+    protected String name;
 
+    @OneToMany(mappedBy = "country")
+    protected List<IslandCluster> islandClusters;
+    @OneToMany(mappedBy = "islandCluster")
+    protected List<Island> island;
     @ManyToOne
-    private Continent continent;
-    @OneToMany
-    private IslandCluster islandCluster;
-    @OneToMany
-    private Island island;
+    protected Continent continent;
 
     public Country(){
 
@@ -29,7 +34,7 @@ public class Country {
 
 
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
@@ -41,9 +46,9 @@ public class Country {
         return continent;
     }
 
-    public Island getIsland(){
-        return island;
-    }
+     public List<IslandCluster> getIslandClusters(){
+        return islandClusters;
+     }
 
 
 }

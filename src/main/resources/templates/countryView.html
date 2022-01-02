@@ -3,9 +3,9 @@
 <head>
     <meta-charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <title>JAC ENTERPRISES</title>
     <link rel="stylesheet" href="generalCountryStyle.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <title th:text="${country.name}">country</title>
 </head>
 <body>
   <!-- this is the header code -->
@@ -51,8 +51,12 @@
             </nav>
         </div>
     </header>
-    <h1>Countries</h1>
-<!-- this is the team grid code -->
+<h1 th:text="${country.name}">country</h1><!-- this is the team grid code -->
+      <h2>Island Clusters in Country</h2>
+
+    <h2 th:each="islandCluster: ${country.islandClusters}"><a th:href="@{/islandCluster(id=${islandCluster.id})}" th:text="${islandCluster.name}"></a></h2>
+    <p><a id="countriesButton" th:href="@{/countries}">Back to Countries List</a></p>
+
 <div class="row">
     <div class="column">
       <div class="card-1">
@@ -169,5 +173,3 @@
   </div>
     </div>
 </footer>
-</body>
-</html>

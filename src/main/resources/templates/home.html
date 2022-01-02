@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta-charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
     <title>JAC ENTERPRISES</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <header>
-        <img class="logo" src="assets\logo2.png" alt="logo">
+        <img class="logo" src="images/logo2.png" alt="logo">
         <div class="group">
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">Menu</label>
@@ -16,12 +16,13 @@
                 <ul>
                 <li><a href="#">Destinations</a>
                     <ul>
-                        <li><a href="#">North America</a></li>
-                        <li><a href="#">South America</a></li>
-                        <li><a href="#">Europe</a></li>
-                        <li><a href="#">Africa</a></li>
-                        <li><a href="#">Asia</a></li>
-                        <li><a href="#">Australia</a></li>
+                        <li th:each="continent: ${continentsModel}"><a th:href="@{/continent(id=${continent.id})}" th:text="${continent.continentName}"></a></li>
+<!--                        <li><a href="#">North America</a></li>-->
+<!--                        <li><a href="#">South America</a></li>-->
+<!--                        <li><a href="#">Europe</a></li>-->
+<!--                        <li><a href="#">Africa</a></li>-->
+<!--                        <li><a href="#">Asia</a></li>-->
+<!--                        <li><a href="#">Australia</a></li>-->
                     </ul>
                 </li>
                 <li><a href="#">Travel Info</a>
@@ -33,7 +34,7 @@
                         <li><a href="#">Refunds/Cancellations</a></li>
                     </ul>
                 </li>
-                <li><a href="#">About Us</a>
+                <li><a href="templates/aboutUsView.html">About Us</a>
                     <ul>
                         <li><a href="#">Meet Our Team</a></li>
                         <li><a href="#">Contact Us</a></li>
@@ -51,7 +52,7 @@
     </header>
     <div class="banner">
         <div class="bg">
-            <img src="assets/island.png" class="cover">
+            <img src="/images/island.png" class="cover">
             <div class="content">
                 <h2>UNIQUE ISLAND ADVENTURES</h2>
                 <a href="#" class="btn">BOOK NOW</a>
@@ -83,7 +84,7 @@
         <div class="advGrids">
             <div class="AdvGrid1">
                 <div class="advcont">
-                    <img src="assets\swimWithSharks.png" alt="swim with sharks">
+                    <img src="/images/swimWithSharks.png" alt="swim with sharks">
                 </div>
                 <div class="details">
                 <h3>DARING</h3>
@@ -95,7 +96,7 @@
             </div>
             <div class="AdvGrid2">
                 <div class="advcont">
-                    <img src="assets\luxury.png" alt="sailboat">
+                    <img src="/images/luxury.png" alt="sailboat">
                 </div>
                 <div class="details">
                 <h3>LUXURY</h3>
@@ -107,7 +108,7 @@
             </div>
             <div class="AdvGrid3">
                 <div class="advcont">
-                    <img src="assets\getWrecked.png" alt="scuba">
+                    <img src="/images/getWrecked.png" alt="scuba">
                 </div>
                 <div class="details">
                     <h3>GET WRECKED</h3>

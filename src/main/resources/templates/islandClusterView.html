@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/genericstyle.css">
+    <title th:text="${islandCluster.name}">islandCluster</title>
+</head>
+<body>
+    <header>
+        <h1 th:text="${islandCluster.name}">islandCluster</h1>
+    </header>
+    <h2 th:each="island: ${islandCluster.islands}"><a th:href="@{/island(id=${island.id})}" th:text="${island.name}"></a></h2>
+
+
+        <p><a id="islandClustersButton" th:href="@{/islandClusters}">Back to Island Clusters List</a></p>
+</body>
+</html>
