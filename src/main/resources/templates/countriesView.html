@@ -1,16 +1,180 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/genericstyle.css">
+
+    <meta-charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="generalContinentsStyle.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <title>Countries</title>
+
 </head>
 <body>
+  <!-- this is the header code -->
+    <header>
+        <img class="logo" src="assets\logo2.png" alt="logo">
+        <div class="group">
+            <input type="checkbox" id="menu-bar">
+            <label for="menu-bar">Menu</label>
+            <nav class="navbar">
+                <ul>
+                <li><a href="#">Destinations</a>
+                    <ul>
+                        <li><a href="#">North America</a></li>
+                        <li><a href="#">South America</a></li>
+                        <li><a href="#">Europe</a></li>
+                        <li><a href="#">Africa</a></li>
+                        <li><a href="#">Asia</a></li>
+                        <li><a href="#">Australia</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Travel Info</a>
+                    <ul>
+                        <li><a href="#">Tour Packages</a></li>
+                        <li><a href="#">Visa Requirements</a></li>
+                        <li><a href="#">Covid Restrictions</a></li>
+                        <li><a href="#">Flight Deals</a></li>
+                        <li><a href="#">Refunds/Cancellations</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">About Us</a>
+                    <ul>
+                        <li><a href="#">Meet Our Team</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">My Account</a>
+                    <ul>
+                        <li><a href="#">My Travel History</a></li>
+                        <li><a href="#">My Booking</a></li>
+                    </ul>
+                </li>
+            </ul>
+            </nav>
+        </div>
+    </header>
+    <h1>Continents</h1>
+<!-- this is the team grid code -->
+<div class="row">
+    <div class="column">
+      <div class="card-1">
+        <img src="static\maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg" alt="Steve" style="width:100%">
+        <div class="container-1">
+          <h2>North America</h2>
+          <p class="title">United States</p>
+          <p>lorem ipsum lorem ipsum ipsum lorem.</p>
+          <p><button class="button">Packages</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card-2">
+        <img src="static\victor-he-yam1KMv0SgQ-unsplash.jpg" alt="Peter" style="width:100%">
+        <div class="container-2">
+          <h2>South America</h2>
+          <p class="title">Chile</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p><button class="button">Packages</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card-3">
+        <img src="static\anthony-delanoix-aDxmYZtYj7g-unsplash.jpg" alt="Tony" style="width:100%">
+        <div class="container-3">
+          <h2>Europe</h2>
+          <p class="title">France</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p><button class="button">Packages</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
 
         <h2 th:each="country: ${countries}"><a th:href="@{/country(id=${country.id})}" th:text="${country.name}"></a></h2>
 
         <a href="/continents">back to continents</a>
+
+  <div class="row">
+    <div class="column">
+      <div class="card-4">
+        <img src="static\damian-patkowski-T-LfvX-7IVg-unsplash.jpg" alt="Steve" style="width:100%">
+        <div class="container-4">
+          <h2>Africa</h2>
+          <p class="title">Cape Verde</p>
+          <p>lorem ipsum lorem ipsum ipsum lorem.</p>
+          <p><button class="button">Packages</button></p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="column">
+      <div class="card-5">
+        <img src="static\charles-postiaux-TnUG2pWraPE-unsplash.jpg" alt="Peter" style="width:100%">
+        <div class="container-5">
+          <h2>Asia</h2>
+          <p class="title">Philippines</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p><button class="button">Packages</button></p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card-6">
+        <img src="static\jeremy-bezanger-6LEEmK68fa4-unsplash.jpg" alt="Tony" style="width:100%">
+        <div class="container-6">
+          <h2>Oceania</h2>
+          <p class="title">Australia</p>
+          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
+          <p><button class="button">Packages</button></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- footer code -->
+  <footer class="footer-content">
+    <div class="footer-left">
+  <img src="assets\logo2.png">
+        <h3>About <span>JAC ENTERPRISES</span></h3>
+        <p class="footer-links">
+            <a href="#">About</a>
+            |
+            <a href="#">Destinations</a>
+            |
+            <a href="#">Travel Info</a>
+            |
+            <a href="#">Contact</a>
+        </p>
+        <p class="footer-company-name">© 2021 JAC ENTERPRISES Pvt. Ltd.</p>
+    </div>
+    <div class="footer-center">
+        <div>
+            <i class="fa fa-map-marker"></i>
+            <p><span>1234 Lake Drive Unit 12</span>
+                Cleveland, Ohio - 44101</p>
+        </div>
+        <div>
+            <i class="fa fa-phone"></i>
+            <p>(216) 664-1234</p>
+        </div>
+        <div>
+            <i class="fa fa-envelope"></i>
+            <p><a href="mailto:contactus@jac-ent.com">contactus@jac-ent.com</a></p>
+        </div>
+    </div>
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>About the company</span>
+            We offer unique island adventures.</p>
+        <div class="footer-icons">
+    <a href="#"><i class="fa fa-facebook"></i></a>
+    <a href="#"><i class="fa fa-twitter"></i></a>
+    <a href="#"><i class="fa fa-instagram"></i></a>
+    <a href="#"><i class="fa fa-linkedin"></i></a>
+    <a href="#"><i class="fa fa-youtube"></i></a>
+  </div>
+    </div>
+</footer>
+
 </body>
 </html>
