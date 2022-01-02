@@ -7,24 +7,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import javax.persistence.*;
-
-
 @Entity
 public class Island {
     @Id
     @GeneratedValue
-    private Long id;
+    protected Long id;
 
-    private String name;
-    private String description;
+    protected String name;
+    protected String description;
 
     @ManyToOne
-    private Country country;
+    protected Country country;
     @ManyToOne
-    private Continent continent;
-    @OneToOne
-    private IslandCluster islandCluster;
+    protected Continent continent;
+    @ManyToOne
+    protected IslandCluster islandCluster;
 
     public Island(){
 
@@ -35,7 +32,7 @@ public class Island {
         this.description=description;
         this.country=country;
         this.continent=continent;
-        this.islandCluster=islandCluster;
+        this.islandCluster= islandCluster;
     }
 
     public String getName(){

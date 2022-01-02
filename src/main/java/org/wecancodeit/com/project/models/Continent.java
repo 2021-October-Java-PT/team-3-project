@@ -4,22 +4,23 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 public class Continent {
 
     @Id
     @GeneratedValue
-    private Long id;
-    private String continentName;
+    protected Long id;
+    protected String continentName;
 
 
-    @OneToMany
-    private Country country;
-    @OneToMany
-    private Island island;
-    @OneToMany
-    private IslandCluster islandCluster;
+    @OneToMany(mappedBy = "continent")
+    protected List<Country> countries;
+    @OneToMany(mappedBy = "islandCluster")
+    protected List<Island> island;
+    @OneToMany(mappedBy = "country")
+    protected List<IslandCluster> islandClusters;
 
     public Continent(){
 
@@ -36,4 +37,9 @@ public class Continent {
     public String getContinentName() {
         return continentName;
     }
+
+    public List<Country> getCountries(){
+        return countries;
+    }
+
 }
