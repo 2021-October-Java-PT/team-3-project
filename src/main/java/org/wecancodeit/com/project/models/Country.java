@@ -46,7 +46,7 @@ public class Country {
         return continent;
     }
 
-     public List<IslandCluster> getIslandCLusters(){
+     public List<IslandCluster> getIslandClusters(){
         return islandClusters;
      }
 
