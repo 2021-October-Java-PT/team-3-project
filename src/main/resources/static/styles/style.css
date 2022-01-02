@@ -199,9 +199,228 @@ img{
     display: block;
     border-radius: 20px 20px 0 0;
 }
+.details {
+    padding: 20px 10px;
+}
+.details>h3{
+    color: #545454;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 10px 0 15px 0;
+}
+.details>p{
+    color: #545454;
+    font-size: 18px;
+    line-height: 25px;
+    font-family: monospace;
+}
+.adventurer{
+    margin-top: 30px;
+}
+.adventurer>h2{
+    color: #545454;
+    font-weight: 600;
+    font-size: 75px;
+    margin: 10px 0 15px 0;
+    text-align: center;
+}
+.adventurer>p{
+    color: #545454;
+    font-size: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-family: monospace;
+    margin-bottom: 40px;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+  
+/* brochure above footer  */
+.brochure{
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+  
+
+footer{
+	position: relative;
+	bottom: 0;
+}
+
+@media (max-height:800px){
+	footer { position: static; }
+	header { padding-top:40px; }
+}
+
+
+.footer-content{
+	background-color: #ffda82;
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+	padding: 50px 50px 60px 50px;
+	margin-top: 80px;
+}
+
+.footer-content .footer-left,
+.footer-content .footer-center,
+.footer-content .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
 
 
 
+.footer-content .footer-left{
+	width: 30%;
+}
+
+.footer-content h3{
+	color:  #2a3955;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+
+
+
+.footer-content .footer-left img{
+	width: 40%;
+}
+
+.footer-content h3 span{
+	color:  #2a3955;
+}
+
+
+
+.footer-content .footer-links{
+	color:  #2a3955;
+	margin: 20px 0 12px;
+}
+
+.footer-content .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-content .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+
+
+.footer-content .footer-center{
+	width: 35%;
+}
+
+
+.footer-content .footer-center i{
+	background-color:  #33383b;
+	color: #2a3955;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+.footer-content .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+    color: #fff;
+}
+.footer-content .footer-center i.fa-phone{
+	font-size: 17px;
+	line-height: 38px;
+    color: #fff;
+}
+.footer-content .footer-center i.fa-map-marker{
+	font-size: 17px;
+	line-height: 38px;
+    color: #fff;
+}
+
+
+
+.footer-content .footer-center p{
+	display: inline-block;
+	color: #2a3955;
+	vertical-align: middle;
+	margin:0;
+}
+
+.footer-content .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+
+.footer-content .footer-center p a{
+	color:  #2a3955;
+	text-decoration: none;;
+}
+
+
+
+
+.footer-content .footer-right{
+	width: 30%;
+}
+
+.footer-content .footer-company-about{
+	line-height: 40px;
+	color:  #92999f;
+	font-size: 18px;
+	font-weight: normal;
+	margin: 0;
+}
+
+.footer-content .footer-company-about span{
+	display: block;
+	color:  #2a3955;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+.footer-content .footer-icons{
+	margin-top: 25px;
+}
+.footer-content .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+
+  
+  
+  @keyframes opaqTransition {
+    3% { transform: translateX( 0 ); }
+    25% { transform: translateX( 0 ); }
+    28% { transform: translateX( -700px ); }
+    100% { transform: translateX( -700px ); }
+  }
 
 
 
@@ -236,5 +455,17 @@ img{
     #menu-bar:checked ~ .navbar{
         display: initial;
     }
+    .footer-content .footer-left,
+	.footer-content .footer-center,
+	.footer-content .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.footer-content .footer-center i{
+		margin-left: 0;
+	}
 
 }
