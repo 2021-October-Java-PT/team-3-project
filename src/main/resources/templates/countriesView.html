@@ -9,8 +9,7 @@
 </head>
 <body>
 
-
-        <h2 th:each="country: ${countriesModel}"><a th:href="@{/country(id=${country.id})}" th:text="${country.Name}"></a></h2>
+        <h2 th:each="country: ${countries}"><a th:href="@{/country(id=${country.id})}" th:text="${country.name}"></a></h2>
 
         <a href="/continents">back to continents</a>
 </body>

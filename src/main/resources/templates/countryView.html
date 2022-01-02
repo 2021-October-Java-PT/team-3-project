@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/genericstyle.css">
-    <title>Pick a Country</title>
+    <link rel="stylesheet" href="/styles/genericstyle.css">
+    <title th:text="${country.name}">country</title>
 </head>
 <body>
 
 
 <header>
-    <h1 th:text="${countryModel.name}">country</h1>
+    <h1 th:text="${country.name}">country</h1>
 </header>
-    <h2>Island Clusters in Country</h2>
 <main>
-    <ul>
-        <li th:each="islandCluster: ${islandClusters}"><a th:href="@{'/islandClusters/' + (id=${islandCluster.id})}"th:text="${islandCluster.islandClusterName"></a></li>
-    </ul>
+    <h2>Island Clusters in Country</h2>
+
+    <h2 th:each="islandCluster: ${country.islandClusters}"><a th:href="@{/islandCluster(id=${islandCluster.id})}" th:text="${islandCluster.name}"></a></h2>
+    <p><a id="countriesButton" th:href="@{/countries}">Back to Countries List</a></p>
+
 </main>
 
 </body>

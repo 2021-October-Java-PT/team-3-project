@@ -5,6 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.wecancodeit.com.project.models.Island;
 import org.wecancodeit.com.project.repositories.ContinentRepository;
 import org.wecancodeit.com.project.repositories.CountryRepository;
@@ -17,13 +18,13 @@ import javax.annotation.Resource;
 public class IslandController {
 
     @Resource
-    private ContinentRepository continentRepo;
+    protected ContinentRepository continentRepo;
     @Resource
-    private CountryRepository countryRepo;
+    protected CountryRepository countryRepo;
     @Resource
-    private IslandClusterRepository islandClusterRepo;
+    protected IslandClusterRepository islandClusterRepo;
     @Resource
-    private IslandRepository islandRepo;
+    protected IslandRepository islandRepo;
 
     @RequestMapping("/islands")
     public String displayIslands(Model model) {
@@ -31,13 +32,9 @@ public class IslandController {
         return "islandsView";
     }
 
-    @GetMapping("/island/{id}")
-    public String displaySingleIsland(@PathVariable Long id, Model model){
-        Island retrieveIsland = islandRepo.findById(id).get();
-        model.addAttribute("island", retrieveIsland);
-        model.addAttribute("continentsModel", continentRepo.findAll());
-        model.addAttribute("countries", countryRepo.findAll());
-        model.addAttribute("islandClustersList", islandClusterRepo.findAll());
+    @RequestMapping("/island")
+    public String findOneIsland(@RequestParam Long id, Model model){
+        model.addAttribute("island", islandRepo.findById(id).get());
         return "islandView";
     }
 }

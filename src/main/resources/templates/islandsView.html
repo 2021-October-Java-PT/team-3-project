@@ -12,12 +12,10 @@
 <header>
     <h1>Islands</h1>
 </header>
+<h2 th:each="island: ${islands}"><a th:href="@{/island(id=${island.id})}" th:text="${island.name}"></a></h2>
 
-<main>
-    <ul>
-        <li th:each="islands: ${islandModel"><a th:href="@{/islands(id=${island.id})}" th:text="${island.name}"></a></li>
-    </ul>
+<p><a id="clustersButton" th:href="@{/islandClusters}">Back to Island Clusters List</a></p>
 
-</main>
+
 </body>
 </html>

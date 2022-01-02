@@ -14,8 +14,7 @@
 
     <main>
         <ul>
-
-            <li th:each="country: ${countries}"><a th:href="@{'/countries/' + (id=${country.id})}" th:text="${country.name}"></a></li>
+            <li th:each="country: ${continentModel.countries}"><a th:href="@{country(id=${country.id})}" th:text="${country.name}"></a></li>
         </ul>
         <p><a id="continentsButton" th:href="@{/continents}">Back to Continents List</a></p>
     </main>

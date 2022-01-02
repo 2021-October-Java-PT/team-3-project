@@ -34,9 +34,6 @@ public class ContinentController {
     @RequestMapping("/continent")
     public String findOneContinent(@RequestParam(value="id")Long id, Model model){
         model.addAttribute("continentModel", continentRepo.findById(id).get());
-        model.addAttribute("countries", countryRepo.findAll());
-        model.addAttribute("islandClustersList", islandClusterRepo.findAll());
-        model.addAttribute("islands", islandRepo.findAll());
         return "continentView";
     }
 }
