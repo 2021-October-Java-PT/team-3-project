@@ -3,6 +3,8 @@ package org.wecancodeit.com.project.models;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import java.util.Set;
 
 @Entity
 public class Ocean {
@@ -10,6 +12,11 @@ public class Ocean {
     @GeneratedValue
     private Long id;
     private String name;
+
+
+//    @ManyToMany(mappedBy = "islandCluster")
+//    protected Set<IslandCluster> islandClusters;
+
 
 
     public Ocean(){
@@ -25,4 +32,11 @@ public class Ocean {
         return id;
     }
 
+    public String getName() {
+        return name;
+    }
+
+//    public Set<IslandCluster> getIslandClusters() {
+//        return islandClusters;
+//    }
 }

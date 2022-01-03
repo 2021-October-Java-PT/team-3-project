@@ -1,18 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-
-    <meta-charset="UTF-8">
+<html xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width-device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="generalContinentsStyle.css">
+    <link rel="stylesheet" href="styles/generalContinentsStyle.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <title>Countries</title>
 
 </head>
 <body>
-  <!-- this is the header code -->
     <header>
-        <img class="logo" src="assets\logo2.png" alt="logo">
+        <a th:href="@{/home}">
+        <img class="logo" src="images/logo2.png" alt="logo"></a>
         <div class="group">
             <input type="checkbox" id="menu-bar">
             <label for="menu-bar">Menu</label>
@@ -20,12 +18,7 @@
                 <ul>
                 <li><a href="#">Destinations</a>
                     <ul>
-                        <li><a href="#">North America</a></li>
-                        <li><a href="#">South America</a></li>
-                        <li><a href="#">Europe</a></li>
-                        <li><a href="#">Africa</a></li>
-                        <li><a href="#">Asia</a></li>
-                        <li><a href="#">Australia</a></li>
+                        <li th:each="country: ${countries}"><a th:href="@{/country(id=${country.id})}" th:text="${country.name}"></a></li>
                     </ul>
                 </li>
                 <li><a href="#">Travel Info</a>
@@ -37,10 +30,10 @@
                         <li><a href="#">Refunds/Cancellations</a></li>
                     </ul>
                 </li>
-                <li><a href="#">About Us</a>
+                <li><a th:href="@{/aboutUs}">About Us</a>
                     <ul>
-                        <li><a href="#">Meet Our Team</a></li>
-                        <li><a href="#">Contact Us</a></li>
+                        <li><a th:href="@{/aboutUs}">Meet Our Team</a></li>
+                        <li><a th:href="@{/aboutUs}">Contact Us</a></li>
                     </ul>
                 </li>
                 <li><a href="#">My Account</a>
@@ -53,97 +46,96 @@
             </nav>
         </div>
     </header>
-    <h1>Continents</h1>
-<!-- this is the team grid code -->
-<div class="row">
-    <div class="column">
-      <div class="card-1">
-        <img src="static\maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg" alt="Steve" style="width:100%">
-        <div class="container-1">
-          <h2>North America</h2>
-          <p class="title">United States</p>
-          <p>lorem ipsum lorem ipsum ipsum lorem.</p>
-          <p><button class="button">Packages</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card-2">
-        <img src="static\victor-he-yam1KMv0SgQ-unsplash.jpg" alt="Peter" style="width:100%">
-        <div class="container-2">
-          <h2>South America</h2>
-          <p class="title">Chile</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p><button class="button">Packages</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card-3">
-        <img src="static\anthony-delanoix-aDxmYZtYj7g-unsplash.jpg" alt="Tony" style="width:100%">
-        <div class="container-3">
-          <h2>Europe</h2>
-          <p class="title">France</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p><button class="button">Packages</button></p>
-        </div>
-      </div>
-    </div>
-  </div>
+    <h1>Countries</h1>
 
         <h2 th:each="country: ${countries}"><a th:href="@{/country(id=${country.id})}" th:text="${country.name}"></a></h2>
 
-        <a href="/continents">back to continents</a>
+        <a th:href="@{/continents}">back to continents</a>
+<!--    <h1>Continents</h1>-->
+<!--<div class="row">-->
+<!--    <div class="column">-->
+<!--      <div class="card-1">-->
+<!--        <img src="static\maarten-van-den-heuvel-gZXx8lKAb7Y-unsplash.jpg" alt="Steve" style="width:100%">-->
+<!--        <div class="container-1">-->
+<!--          <h2>North America</h2>-->
+<!--          <p class="title">United States</p>-->
+<!--          <p>lorem ipsum lorem ipsum ipsum lorem.</p>-->
+<!--          <p><button class="button">Packages</button></p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="card-2">-->
+<!--        <img src="static\victor-he-yam1KMv0SgQ-unsplash.jpg" alt="Peter" style="width:100%">-->
+<!--        <div class="container-2">-->
+<!--          <h2>South America</h2>-->
+<!--          <p class="title">Chile</p>-->
+<!--          <p>Some text that describes me lorem ipsum ipsum lorem.</p>-->
+<!--          <p><button class="button">Packages</button></p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="card-3">-->
+<!--        <img src="static\anthony-delanoix-aDxmYZtYj7g-unsplash.jpg" alt="Tony" style="width:100%">-->
+<!--        <div class="container-3">-->
+<!--          <h2>Europe</h2>-->
+<!--          <p class="title">France</p>-->
+<!--          <p>Some text that describes me lorem ipsum ipsum lorem.</p>-->
+<!--          <p><button class="button">Packages</button></p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
 
-  <div class="row">
-    <div class="column">
-      <div class="card-4">
-        <img src="static\damian-patkowski-T-LfvX-7IVg-unsplash.jpg" alt="Steve" style="width:100%">
-        <div class="container-4">
-          <h2>Africa</h2>
-          <p class="title">Cape Verde</p>
-          <p>lorem ipsum lorem ipsum ipsum lorem.</p>
-          <p><button class="button">Packages</button></p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="column">
-      <div class="card-5">
-        <img src="static\charles-postiaux-TnUG2pWraPE-unsplash.jpg" alt="Peter" style="width:100%">
-        <div class="container-5">
-          <h2>Asia</h2>
-          <p class="title">Philippines</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p><button class="button">Packages</button></p>
-        </div>
-      </div>
-    </div>
-    <div class="column">
-      <div class="card-6">
-        <img src="static\jeremy-bezanger-6LEEmK68fa4-unsplash.jpg" alt="Tony" style="width:100%">
-        <div class="container-6">
-          <h2>Oceania</h2>
-          <p class="title">Australia</p>
-          <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p><button class="button">Packages</button></p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- footer code -->
+<!--  <div class="row">-->
+<!--    <div class="column">-->
+<!--      <div class="card-4">-->
+<!--        <img src="static\damian-patkowski-T-LfvX-7IVg-unsplash.jpg" alt="Steve" style="width:100%">-->
+<!--        <div class="container-4">-->
+<!--          <h2>Africa</h2>-->
+<!--          <p class="title">Cape Verde</p>-->
+<!--          <p>lorem ipsum lorem ipsum ipsum lorem.</p>-->
+<!--          <p><button class="button">Packages</button></p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    -->
+<!--    <div class="column">-->
+<!--      <div class="card-5">-->
+<!--        <img src="static\charles-postiaux-TnUG2pWraPE-unsplash.jpg" alt="Peter" style="width:100%">-->
+<!--        <div class="container-5">-->
+<!--          <h2>Asia</h2>-->
+<!--          <p class="title">Philippines</p>-->
+<!--          <p>Some text that describes me lorem ipsum ipsum lorem.</p>-->
+<!--          <p><button class="button">Packages</button></p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="column">-->
+<!--      <div class="card-6">-->
+<!--        <img src="static\jeremy-bezanger-6LEEmK68fa4-unsplash.jpg" alt="Tony" style="width:100%">-->
+<!--        <div class="container-6">-->
+<!--          <h2>Oceania</h2>-->
+<!--          <p class="title">Australia</p>-->
+<!--          <p>Some text that describes me lorem ipsum ipsum lorem.</p>-->
+<!--          <p><button class="button">Packages</button></p>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
   <footer class="footer-content">
     <div class="footer-left">
-  <img src="assets\logo2.png">
+  <img src="images/logo2.png">
         <h3>About <span>JAC ENTERPRISES</span></h3>
         <p class="footer-links">
-            <a href="#">About</a>
+            <a href="@{/aboutUs}">About Us</a>
             |
-            <a href="#">Destinations</a>
+            <a th:href="@{/continents}">Destinations</a>
             |
             <a href="#">Travel Info</a>
             |
-            <a href="#">Contact</a>
+            <a th:href="@{/aboutUs}">Contact</a>
         </p>
         <p class="footer-company-name">© 2021 JAC ENTERPRISES Pvt. Ltd.</p>
     </div>
@@ -175,6 +167,6 @@
   </div>
     </div>
 </footer>
-
+<!--  </div>-->
 </body>
 </html>

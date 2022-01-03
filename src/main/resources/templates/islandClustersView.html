@@ -7,12 +7,46 @@
     <link rel="stylesheet" href="styles/genericstyle.css">
     <title>Island Clusters</title>
 </head>
-<body>
-    
-    <header>
-        <h1>Island Clusters</h1>
-    </header>
 
+<header>
+            <a th:href="@{/home}"><img class="logo" src="images/logo2.png" alt="logo"></a>
+            <div class="group">
+                <input type="checkbox" id="menu-bar">
+                <label for="menu-bar">Menu</label>
+                <nav class="navbar">
+                    <ul>
+                        <li><a th:href="@{/countries}">Destinations</a>
+                            <ul>
+                                <h2 th:each="islandCluster: ${islandClusters}"><a th:href="@{/islandCluster(id=${islandCluster.id})}" th:text="${islandCluster.name}"></a></h2>
+                            </ul>
+                        </li>
+                        <li><a href="#">Travel Info</a>
+                            <ul>
+                                <li><a href="#">Tour Packages</a></li>
+                                <li><a href="#">Visa Requirements</a></li>
+                                <li><a href="#">Covid Restrictions</a></li>
+                                <li><a href="#">Flight Deals</a></li>
+                                <li><a href="#">Refunds/Cancellations</a></li>
+                            </ul>
+                        </li>
+                        <li><a th:href="@{/aboutUs}">About Us</a>
+                            <ul>
+                                <li><a th:href="@{/aboutUs}">Meet Our Team</a></li>
+                                <li><a th:href="@{/aboutUs}">Contact Us</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">My Account</a>
+                            <ul>
+                                <li><a href="#">My Travel History</a></li>
+                                <li><a href="#">My Booking</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+<body>
+    <h1>Island Clusters</h1>
     <h2 th:each="islandCluster: ${islandClusters}"><a th:href="@{/islandCluster(id=${islandCluster.id})}" th:text="${islandCluster.name}"></a></h2>
 
         <p><a id="countriesButton" th:href="@{/countries}">Back to Countries List</a></p>

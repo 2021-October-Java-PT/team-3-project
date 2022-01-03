@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class IslandCluster {
@@ -21,6 +22,10 @@ public class IslandCluster {
     protected Country country;
     @ManyToOne
     protected Continent continent;
+//    @ManyToMany
+//    @JoinTable(name = "oceansIn", joinColumns = @JoinColumn(name = "islandClusterId"),
+//    inverseJoinColumns = @JoinColumn(name = "oceanId"))
+//    protected Set<Ocean> oceans;
 
 
     public IslandCluster(){
@@ -48,6 +53,10 @@ public class IslandCluster {
     public Country getCountry() {
         return country;
     }
+
+//    public Set<Ocean> getOceans() {
+//        return oceans;
+//    }
 
     public Continent getContinent() {
         return continent;

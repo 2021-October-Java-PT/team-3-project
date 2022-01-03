@@ -18,7 +18,8 @@ public class Populator implements CommandLineRunner {
     private IslandClusterRepository islandClusterRepo;
     @Resource
     private IslandRepository islandRepo;
-//    private OceanRepository oceanRepo;
+    @Resource
+    private OceanRepository oceanRepo;
 
     @Override
     public void run(String... args) throws Exception {
@@ -35,6 +36,14 @@ public class Populator implements CommandLineRunner {
         continentRepo.save(asia);
         Continent oceania = new Continent("Oceania");
         continentRepo.save(oceania);
+        Ocean indian = new Ocean("Indian Ocean");
+        oceanRepo.save(indian);
+        Ocean atlantic = new Ocean("Atlantic Ocean");
+        oceanRepo.save(atlantic);
+        Ocean pacific = new Ocean("Pacific Ocean");
+        oceanRepo.save(pacific);
+        Ocean artic = new Ocean("Artic Ocean");
+        oceanRepo.save(artic);
         Country lambu = new Country("lambu",africa);
         countryRepo.save(lambu);
         IslandCluster cluster = new IslandCluster("name", lambu, africa);
@@ -44,14 +53,6 @@ public class Populator implements CommandLineRunner {
          Island jay = new Island("jay", "description", lambu, africa, cluster);
         islandRepo.save(jay);
 
-//        Ocean indian = new Ocean("Indian Ocean");
-//        oceanRepo.save(indian);
-//        Ocean atlantic = new Ocean("Atlantic Ocean");
-//        oceanRepo.save(atlantic);
-//        Ocean pacific = new Ocean("Pacific Ocean");
-//        oceanRepo.save(pacific);
-//        Ocean artic = new Ocean("Artic Ocean");
-//        oceanRepo.save(artic);
 
 
 
