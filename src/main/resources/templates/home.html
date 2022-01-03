@@ -15,11 +15,18 @@
         <label for="menu-bar">Menu</label>
         <nav class="navbar">
             <ul>
-                <li><a href="#">Destinations</a>
+                <li><a href="#">Continents</a>
                     <ul>
                         <li th:each="continent: ${continentsModel}"><a th:href="@{/continent(id=${continent.id})}"
                                                                        th:text="${continent.continentName}"></a></li>
+
                     </ul>
+                </li>
+                <li><a href="#">Oceans</a>
+                <ul>
+
+                <li th:each="ocean: ${oceans}"><a th:href="@{/ocean(id=${ocean.id})}" th:text="${ocean.name}"></a></li>
+                </ul>
                 </li>
                 <li><a href="#">Travel Info</a>
                     <ul>

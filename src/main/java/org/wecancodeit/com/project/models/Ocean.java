@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import java.util.Collection;
 import java.util.Set;
 
 @Entity
@@ -14,8 +15,8 @@ public class Ocean {
     private String name;
 
 
-//    @ManyToMany(mappedBy = "islandCluster")
-//    protected Set<IslandCluster> islandClusters;
+    @ManyToMany(mappedBy = "oceans")
+    protected Collection<IslandCluster> islandClusters;
 
 
 
@@ -36,7 +37,7 @@ public class Ocean {
         return name;
     }
 
-//    public Set<IslandCluster> getIslandClusters() {
-//        return islandClusters;
-//    }
+    public Collection<IslandCluster> getIslandClusters() {
+        return islandClusters;
+    }
 }
