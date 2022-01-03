@@ -16,6 +16,8 @@ public class OceanController {
 
     @Resource
     private OceanRepository oceanRepo;
+
+
     @RequestMapping ({"/oceans"})
     public String displayOceans(Model model){
         model.addAttribute("countries", oceanRepo.findAll());
