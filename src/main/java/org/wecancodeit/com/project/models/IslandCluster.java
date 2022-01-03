@@ -6,8 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 public class IslandCluster {
@@ -22,20 +21,20 @@ public class IslandCluster {
     protected Country country;
     @ManyToOne
     protected Continent continent;
-//    @ManyToMany
-//    @JoinTable(name = "oceansIn", joinColumns = @JoinColumn(name = "islandClusterId"),
-//    inverseJoinColumns = @JoinColumn(name = "oceanId"))
-//    protected Set<Ocean> oceans;
+    @ManyToMany
+    protected Collection<Ocean> oceans;
+
 
 
     public IslandCluster(){
 
     }
 
-    public IslandCluster(String name, Country country, Continent continent){
+    public IslandCluster(String name, Country country, Continent continent, Ocean...oceans){
         this.name = name;
         this.country = country;
         this.continent = continent;
+        this.oceans=new ArrayList<>(Arrays.asList(oceans));
     }
 
     public String getName() {
@@ -54,9 +53,9 @@ public class IslandCluster {
         return country;
     }
 
-//    public Set<Ocean> getOceans() {
-//        return oceans;
-//    }
+    public Collection<Ocean> getOcean(){
+        return oceans;
+    }
 
     public Continent getContinent() {
         return continent;

@@ -3,10 +3,7 @@ package org.wecancodeit.com.project.controllers;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.wecancodeit.com.project.repositories.ContinentRepository;
-import org.wecancodeit.com.project.repositories.CountryRepository;
-import org.wecancodeit.com.project.repositories.IslandClusterRepository;
-import org.wecancodeit.com.project.repositories.IslandRepository;
+import org.wecancodeit.com.project.repositories.*;
 
 import javax.annotation.Resource;
 
@@ -22,6 +19,8 @@ public class homeController {
     private IslandClusterRepository islandClusterRepo;
     @Resource
     private IslandRepository islandRepo;
+    @Resource
+    private OceanRepository oceanRepo;
 
 
 
@@ -31,6 +30,7 @@ public class homeController {
             model.addAttribute("countries", countryRepo.findAll());
             model.addAttribute("islandClustersList", islandClusterRepo.findAll());
             model.addAttribute("islands", islandRepo.findAll());
+            model.addAttribute("oceans", oceanRepo.findAll());
             return "home";
         }
 }

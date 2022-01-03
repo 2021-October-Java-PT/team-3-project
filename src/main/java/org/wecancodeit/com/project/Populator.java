@@ -46,9 +46,9 @@ public class Populator implements CommandLineRunner {
         oceanRepo.save(artic);
         Country lambu = new Country("lambu",africa);
         countryRepo.save(lambu);
-        IslandCluster cluster = new IslandCluster("name", lambu, africa);
+        IslandCluster cluster = new IslandCluster("name", lambu, africa,indian, pacific);
         islandClusterRepo.save(cluster);
-        IslandCluster cluster2 = new IslandCluster("name2", lambu, africa);
+        IslandCluster cluster2 = new IslandCluster("name2", lambu, africa, atlantic);
         islandClusterRepo.save(cluster2);
          Island jay = new Island("jay", "description", lambu, africa, cluster);
         islandRepo.save(jay);

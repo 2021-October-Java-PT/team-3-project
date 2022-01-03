@@ -17,9 +17,9 @@
             <label for="menu-bar">Menu</label>
             <nav class="navbar">
                 <ul>
-                    <li><a th:href="@{/oceans}">Destinations</a>
+                    <li><a href="#">Destinations</a>
                         <ul>
-                            <li th:each="island: ${islands}"><a th:href="@{/island(id=${island.id})}" th:text="${island.name}"></a></li>
+                            <li th:each="islandCluster: ${ocean.islandClusters}"><a th:href="@{/islandCluster(id=${islandCluster.id})}" th:text="${islandCluster.name}"></a></li>
                         </ul>
                     </li>
                     <li><a href="#">Travel Info</a>
@@ -50,9 +50,9 @@
 </header>
 <h1 th:text="${ocean.name}"></h1>
 
-<h2>Islands in this Ocean</h2>
+<h2>Island Clusters in this Ocean</h2>
 
-<li th:each="island: ${islands}"><a th:href="@{/island(id=${island.id})}" th:text="${island.name}"></a></li>
+<h2 th:each="islandCluster: ${ocean.islandClusters}"><a th:href="@{/islandCluster(id=${islandCluster.id})}" th:text="${islandCluster.name}"></a></h2>
 
 <nav><a href="/oceans">Back</a></nav>
 </body>
