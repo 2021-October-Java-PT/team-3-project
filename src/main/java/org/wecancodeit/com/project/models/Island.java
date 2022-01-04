@@ -12,9 +12,9 @@ public class Island {
     @Id
     @GeneratedValue
     protected Long id;
-
     protected String name;
     protected String description;
+    protected String imagePath;
 
     @ManyToOne
     protected Country country;
@@ -27,12 +27,13 @@ public class Island {
 
     }
 
-    public Island(String name, String description, Country country, Continent continent, IslandCluster islandCluster){
+    public Island(String name, String description, Country country, Continent continent, IslandCluster islandCluster, String imagePath){
         this.name=name;
         this.description=description;
         this.country=country;
         this.continent=continent;
         this.islandCluster= islandCluster;
+        this.imagePath = imagePath;
     }
 
     public String getName(){
@@ -41,6 +42,10 @@ public class Island {
 
     public String getDescription(){
         return description;
+    }
+
+    public String getImagePath() {
+        return imagePath;
     }
 
     public Country getCountry(){
@@ -58,4 +63,5 @@ public class Island {
     public IslandCluster getIslandCluster() {
         return islandCluster;
     }
+
 }

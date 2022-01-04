@@ -45,8 +45,11 @@
         </div>
     </header>
 <h1 th:text="${country.name}">country</h1>
-      <h2>Island Clusters in Country</h2>
 
+    <img id="countryImage" th:src="${country.imagePath}" alt="Country Image">
+    <p id="countryDescription" th:text="${country.description}"></p>
+
+      <h2>Island Clusters in Country</h2>
     <h2 th:each="islandCluster: ${country.islandClusters}"><a th:href="@{/islandCluster(id=${islandCluster.id})}" th:text="${islandCluster.name}"></a></h2>
     <p><a id="countriesButton" th:href="@{/countries}">Back to Countries List</a></p>
 

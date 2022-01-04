@@ -13,12 +13,14 @@ public class Continent {
     @GeneratedValue
     protected Long id;
     protected String continentName;
+    protected String description;
+    protected String imagePath;
 
 
     @OneToMany(mappedBy = "continent")
     protected List<Country> countries;
     @OneToMany(mappedBy = "islandCluster")
-    protected List<Island> island;
+    protected List<Island> islands;
     @OneToMany(mappedBy = "country")
     protected List<IslandCluster> islandClusters;
 
@@ -26,8 +28,10 @@ public class Continent {
 
     }
 
-    public Continent(String continentName) {
+    public Continent(String continentName, String description, String imagePath) {
         this.continentName = continentName;
+        this.description = description;
+        this.imagePath = imagePath;
     }
 
     public Long getId() {
@@ -42,4 +46,19 @@ public class Continent {
         return countries;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public List<Island> getIsland() {
+        return islands;
+    }
+
+    public List<IslandCluster> getIslandClusters() {
+        return islandClusters;
+    }
 }

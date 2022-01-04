@@ -23,18 +23,18 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Continent africa = new Continent("Africa");
+        Continent africa = new Continent("Africa", "describe", "/images/island.png");
         continentRepo.save(africa);
 
-        Continent europe = new Continent("Europe");
+        Continent europe = new Continent("Europe", "describe","image here");
         continentRepo.save(europe);
-        Continent northAmerica = new Continent("North America");
+        Continent northAmerica = new Continent("North America", "describe", "image here");
         continentRepo.save(northAmerica);
-        Continent southAmerica = new Continent("South America");
+        Continent southAmerica = new Continent("South America", "describe","image");
         continentRepo.save(southAmerica);
-        Continent asia = new Continent("Asia");
+        Continent asia = new Continent("Asia", "describe", "image");
         continentRepo.save(asia);
-        Continent oceania = new Continent("Oceania");
+        Continent oceania = new Continent("Oceania", "describe", "image");
         continentRepo.save(oceania);
         Ocean indian = new Ocean("Indian Ocean");
         oceanRepo.save(indian);
@@ -44,13 +44,13 @@ public class Populator implements CommandLineRunner {
         oceanRepo.save(pacific);
         Ocean artic = new Ocean("Artic Ocean");
         oceanRepo.save(artic);
-        Country lambu = new Country("lambu",africa);
+        Country lambu = new Country("lambu",africa,"describe","/images/island.png");
         countryRepo.save(lambu);
-        IslandCluster cluster = new IslandCluster("name", lambu, africa,indian, pacific);
+        IslandCluster cluster = new IslandCluster("name", "describe", lambu, africa, "/images/island.png",indian, pacific);
         islandClusterRepo.save(cluster);
-        IslandCluster cluster2 = new IslandCluster("name2", lambu, africa, atlantic);
+        IslandCluster cluster2 = new IslandCluster("name2", "describe",lambu, africa, "/images/island.png",atlantic);
         islandClusterRepo.save(cluster2);
-         Island jay = new Island("jay", "description", lambu, africa, cluster);
+         Island jay = new Island("jay", "description", lambu, africa, cluster, "/images/island.png");
         islandRepo.save(jay);
 
 
