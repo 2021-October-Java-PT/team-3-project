@@ -14,6 +14,8 @@ public class IslandCluster {
     @GeneratedValue
     protected Long id;
     protected String name;
+    protected String description;
+    protected String imagePath;
 
     @OneToMany(mappedBy = "islandCluster")
     protected List<Island> islands;
@@ -30,10 +32,12 @@ public class IslandCluster {
 
     }
 
-    public IslandCluster(String name, Country country, Continent continent, Ocean...oceans){
+    public IslandCluster(String name, String description, Country country, Continent continent, String imagePath, Ocean...oceans){
         this.name = name;
         this.country = country;
         this.continent = continent;
+        this.description = description;
+        this.imagePath = imagePath;
         this.oceans=new ArrayList<>(Arrays.asList(oceans));
     }
 
@@ -63,5 +67,17 @@ public class IslandCluster {
 
     public List<Island> getIslands() {
         return islands;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public Collection<Ocean> getOceans() {
+        return oceans;
     }
 }

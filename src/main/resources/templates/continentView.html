@@ -50,6 +50,8 @@
 
     <main>
         <h1 th:text="${continentModel.continentName}">continent</h1>
+        <img id="continentImage" th:src="${continentModel.imagePath}" alt="Continent Image">
+        <p id="continentDescription" th:text="${continentModel.description}"></p>
         <ul>
             <li th:each="country: ${continentModel.countries}"><a th:href="@{country(id=${country.id})}" th:text="${country.name}"></a></li>
         </ul>
