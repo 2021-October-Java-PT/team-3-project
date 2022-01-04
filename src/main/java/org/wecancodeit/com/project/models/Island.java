@@ -27,9 +27,8 @@ public class Island {
 
     }
 
-    public Island(String name, String description, Country country, Continent continent, IslandCluster islandCluster, String imagePath){
+    public Island(String name, Country country, Continent continent, IslandCluster islandCluster, String imagePath){
         this.name=name;
-        this.description=description;
         this.country=country;
         this.continent=continent;
         this.islandCluster= islandCluster;
@@ -38,10 +37,6 @@ public class Island {
 
     public String getName(){
         return name;
-    }
-
-    public String getDescription(){
-        return description;
     }
 
     public String getImagePath() {
