@@ -23,7 +23,7 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Continent africa = new Continent("Africa", "describe", "/images/island.png");
+        Continent africa = new Continent("Africa", "describe", "/images/South Africa.png");
         continentRepo.save(africa);
 
         Continent europe = new Continent("Europe", "describe","image here");
@@ -46,12 +46,19 @@ public class Populator implements CommandLineRunner {
         oceanRepo.save(artic);
         Country lambu = new Country("lambu",africa,"describe","/images/island.png");
         countryRepo.save(lambu);
+        Country southAfrica = new Country("South Africa", africa, "South Africa is mad pretty yo. visit or something.", "/images/South Africa.png");
+        countryRepo.save(southAfrica);
+        IslandCluster tristanDaCunah = new IslandCluster("Tristan da Cunah", "Pretty cluster of islands in the south " +
+                "atlantic, off the coast of South Africa SON!", southAfrica, africa, "images/island.png", atlantic , indian);
+        islandClusterRepo.save(tristanDaCunah);
         IslandCluster cluster = new IslandCluster("name", "describe", lambu, africa, "/images/island.png",indian, pacific);
         islandClusterRepo.save(cluster);
         IslandCluster cluster2 = new IslandCluster("name2", "describe",lambu, africa, "/images/island.png",atlantic);
         islandClusterRepo.save(cluster2);
          Island jay = new Island("jay", "description", lambu, africa, cluster, "/images/island.png");
         islandRepo.save(jay);
+        Island edinburgh =new Island("Edinburgh of the Seven Seas", "white people doin white people shit", southAfrica,africa,tristanDaCunah,"/images/island.png");
+        islandRepo.save(edinburgh);
 
 
 
