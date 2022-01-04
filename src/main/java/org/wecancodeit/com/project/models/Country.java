@@ -29,9 +29,8 @@ public class Country {
     }
 
 
-    public Country( String name, Continent continent ,String description, String imagePath) {
+    public Country( String name, Continent continent, String imagePath) {
         this.name = name;
-        this.description = description;
         this.imagePath = imagePath;
         this.continent = continent;
     }
@@ -49,11 +48,6 @@ public class Country {
 
     public Continent getContinent(){
         return continent;
-    }
-
-
-    public String getDescription() {
-        return description;
     }
 
     public String getImagePath() {
