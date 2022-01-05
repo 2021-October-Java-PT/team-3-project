@@ -48,7 +48,7 @@
         <h1 th:text="${islandCluster.name}">islandCluster</h1>
 
         <img id="islandClusterImage" th:src="${islandCluster.imagePath}" alt="Cluster Image">
-        <p id="clusterDescription" th:text="${islandCluster.description}"></p>
+
 
     <h2 th:each="island: ${islandCluster.islands}"><a th:href="@{/island(id=${island.id})}" th:text="${island.name}"></a></h2>
         <p><a id="islandClustersButton" th:href="@{/islandClusters}">Back to Island Clusters List</a></p>
