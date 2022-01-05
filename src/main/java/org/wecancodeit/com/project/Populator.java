@@ -23,7 +23,9 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Continent africa = new Continent("Africa", "describe", "/images/South Africa.png");
+        Continent africa = new Continent("Africa", "Africa! The mother land! Come visit the place " +
+                "were life begin and explore it's history and discover it's mystery. Chill with the natives and let them " +
+                "show you Africa like you have never seen it.", "/images/South Africa.png");
         continentRepo.save(africa);
 
         Continent europe = new Continent("Europe", "describe","image here");
@@ -44,7 +46,7 @@ public class Populator implements CommandLineRunner {
         oceanRepo.save(pacific);
         Ocean artic = new Ocean("Artic Ocean");
         oceanRepo.save(artic);
-        Country lambu = new Country("lambu",africa,"describe","/images/island.png");
+        Country lambu = new Country("lambu",africa,"description","/images/island.png");
         countryRepo.save(lambu);
         Country southAfrica = new Country("South Africa", africa, "South Africa is mad pretty yo. visit or something.", "/images/South Africa.png");
         countryRepo.save(southAfrica);

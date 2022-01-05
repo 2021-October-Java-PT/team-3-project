@@ -15,6 +15,34 @@
         <input type="checkbox" id="menu-bar">
         <label for="menu-bar">Menu</label>
         <nav class="navbar">
+            <ul>
+                <li><a th:href="@{/countries}">Destinations</a>
+                    <ul>
+                        <li th:each="continent: ${continentsModel}"><a th:href="@{/continent(id=${continent.id})}" th:text="${continent.continentName}"></a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Travel Info</a>
+                    <ul>
+                        <li><a href="#">Tour Packages</a></li>
+                        <li><a href="#">Visa Requirements</a></li>
+                        <li><a href="#">Covid Restrictions</a></li>
+                        <li><a href="#">Flight Deals</a></li>
+                        <li><a href="#">Refunds/Cancellations</a></li>
+                    </ul>
+                </li>
+                <li><a th:href="@{/aboutUs}">About Us</a>
+                    <ul>
+                        <li><a th:href="@{/aboutUs}">Meet Our Team</a></li>
+                        <li><a th:href="@{/aboutUs}">Contact Us</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">My Account</a>
+                    <ul>
+                        <li><a href="#">My Travel History</a></li>
+                        <li><a href="#">My Booking</a></li>
+                    </ul>
+                </li>
+            </ul>
         </nav>
     </div>
 </header>
@@ -61,16 +89,19 @@
         </div>
     </div>
 </div>
-</div>
 <!-- this is the team 3 grid code -->
 <div class="row">
     <div class="column">
         <div class="card">
-            <img src="https://www.cheatsheet.com/wp-content/uploads/2020/04/Chris-Evans-1.jpg" alt="Steve" style="width:100%">
+            <img src="images/Dia.jpg" alt="Steve" style="width:100%">
             <div class="container">
-                <h2>Steve Rogers</h2>
+                <h2>Dia Scruggs</h2>
                 <p class="title">Founder</p>
-                <p>lorem ipsum lorem ipsum ipsum lorem.</p>
+                <p> Hey, I am Dia and I loved working with JAC and their web development team to make this website for you! I am a junior developer here
+                    and I have done nothing but have fun traveling with JAC to get a feel for their day to day to better understand what they and their customers 
+                    want in this website and learn from our senior team how to make this the best website for you all! I have not only learned but grown from this experience
+                    and am ready to take on more to bring you all the best user-friendly and functional website that I can offer. 
+                </p>
                 <p>Steve@jac-ent.com</p>
                 <p><button class="button">Contact</button></p>
             </div>
