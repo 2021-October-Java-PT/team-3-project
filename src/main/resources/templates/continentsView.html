@@ -49,9 +49,10 @@
         </div>
     </header>
 </header>
+<div >
 <h1>Continents</h1>
 <h2 th:each="continent: ${continentsModel}"><a th:href="@{/continent(id=${continent.id})}" th:text="${continent.continentName}"></a></h2>
-
+</div>
 
 <a class="nav__home" href="/home">back to home</a>
 
