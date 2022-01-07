@@ -18,101 +18,43 @@
         </nav>
     </div>
 </header>
-<div class="card">
-    <h1>ABOUT US</h1>
-    <div class="containerAU">
-        <p class="containerP">"Vincit Qui Se Vincit!"...</p>
-        <p class="containerP2">Those are the very words shouted as our founder, Cliff Jenkins, surfed down the Volcano back of Mauna Loa in Hawaii and that
-            is the motto that we here at JAC Enterprises live by. We must conquer ourselves and face these days with adrenaline pumping
-            in our veins and passion for the next thrill thumbing in our hearts! If you want to get away from the rest of these mundane
-            world and experiences a new adventure every day then please join us as well will take you on an journey in whatever continent
-            country, and island you choose from. We can take you from the wild jungles of the deepest parts of Asia to the most beautiful
-            and historic places in Africa. All you need to do is pick the place, pick you travel page and us do all the work!.
-            Hope to see you there to take on you next adventure!
-            The JAC Enterprise Staff! </p>
+<div class="about">
+    <img src="images/AboutUs.png">
+</div>
+<div class="team">
+    <img src="images/team1.png">
+    <img src="images/team2.png">
+</div>
+</div>
+<h1>CONTACT US</h1>
+<div class="container">
+    <form action="action_page.php">
 
-    </div>
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+        <label for="country">Country</label>
+        <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+        <input type="submit" value="Submit">
+
+    </form>
 </div>
-<h1>MEET THE TEAM</h1>
-<div class="row1">
-    <div class="column1">
-        <div class="card1">
-            <img src="https://www.cheatsheet.com/wp-content/uploads/2020/04/Chris-Evans-1.jpg" alt="Steve" style="width:100%">
-            <div class="container">
-                <h2>TJ Detweiler</h2>
-                <p class="title">Founder</p>
-                <p>I'm just here so I don't get fined.</p>
-                <p>Steve@jac-ent.com</p>
-                <p><button class="button">Contact</button></p>
-            </div>
-        </div>
-    </div>
-    <div class="column1">
-        <div class="card2">
-            <img src="https://www.cheatsheet.com/wp-content/uploads/2020/04/Chris-Evans-1.jpg" alt="Peter" style="width:100%">
-            <div class="container">
-                <h2>Jacob Stout</h2>
-                <p class="title">CEO</p>
-                <p>The only verdict is vengeance; a vendetta, held as a votive, not in vain,
-                    for the value and veracity of such shall one day vindicate the vigilant and the virtuous.
-                    Verily, this vichyssoise of verbiage veers most verbose, so let me simply
-                    add that it is my very good honor to meet you and you may call me V.</p>
-                <p>peter@jac-ent.com</p>
-                <p><button class="button">Contact</button></p>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<!-- this is the team 3 grid code -->
-<div class="row">
-    <div class="column">
-        <div class="card">
-            <img src="https://www.cheatsheet.com/wp-content/uploads/2020/04/Chris-Evans-1.jpg" alt="Steve" style="width:100%">
-            <div class="container">
-                <h2>Steve Rogers</h2>
-                <p class="title">Founder</p>
-                <p>lorem ipsum lorem ipsum ipsum lorem.</p>
-                <p>Steve@jac-ent.com</p>
-                <p><button class="button">Contact</button></p>
-            </div>
-        </div>
-    </div>
-    <div class="column">
-        <div class="card">
-            <img src="https://www.cheatsheet.com/wp-content/uploads/2020/04/Chris-Evans-1.jpg" alt="Steve" style="width:100%">
-            <div class="container">
-                <h2>Dia Scruggs</h2>
-                <p class="title">Founder</p>
-                <p> Hey, I am Dia and I loved working with JAC and their web development team to make this website for you! I am a junior developer here
-                    and I have done nothing but have fun traveling with JAC to get a feel for their day to day to better understand what they and their customers 
-                    want in this website and learn from our senior team how to make this the best website for you all! I have not only learned but grown from this experience
-                    and am ready to take on more to bring you all the best user-friendly and functional website that I can offer. 
-                </p>
-                <p>diascruggs793@outlook.com</p>
-                <p><button class="button">Contact</button></p>
-            </div>
-        </div>
-    </div>
-    <div class="column">
-        <div class="card">
-            <img src="https://www.cheatsheet.com/wp-content/uploads/2020/04/Chris-Evans-1.jpg" alt="Steve" style="width:100%">
-            <div class="container">
-                <h2>Tony Stark</h2>
-                <p class="title">Manager</p>
-                <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                <p>tony@jac-ent.com</p>
-                <p><button class="button">Contact</button></p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- footer code -->
 <footer class="footer-content">
     <div class="footer-left">
-        <img src="assets\logo2.png">
+        <img src="images/logo2.png">
         <h3>About <span>JAC ENTERPRISES</span></h3>
+
         <p class="footer-links">
             <a href="#">About</a>
             |
@@ -122,14 +64,17 @@
             |
             <a href="#">Contact</a>
         </p>
+
         <p class="footer-company-name">© 2021 JAC ENTERPRISES Pvt. Ltd.</p>
     </div>
+
     <div class="footer-center">
         <div>
             <i class="fa fa-map-marker"></i>
             <p><span>1234 Lake Drive Unit 12</span>
                 Cleveland, Ohio - 44101</p>
         </div>
+
         <div>
             <i class="fa fa-phone"></i>
             <p>(216) 664-1234</p>
@@ -152,6 +97,5 @@
         </div>
     </div>
 </footer>
-
 </body>
 </html>

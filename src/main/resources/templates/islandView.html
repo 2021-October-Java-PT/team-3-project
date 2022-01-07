@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/genericstyle.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <title th:text="${island.name}">island</title>
 </head>
 <header>
     <a th:href="@{/home}"><img class="logo" src="images/logo2.png" alt="logo"></a>
     <div class="group">
-        <input type="checkbox" id="menu-bar">
-        <label for="menu-bar">Menu</label>
+<!--        <input type="checkbox" id="menu-bar">-->
+<!--        <label for="menu-bar">Menu</label>-->
         <nav class="navbar">
             <ul>
                 <li><a th:href="@{/islandClusters}">Destinations</a>
@@ -54,7 +55,7 @@
 
 <footer class="footer-content">
     <div class="footer-left">
-        <img src="assets\logo2.png">
+        <img src="images/logo2.png">
         <h3>About <span>JAC ENTERPRISES</span></h3>
         <p class="footer-links">
             <a href="#">About</a>
