@@ -3,6 +3,7 @@ package org.wecancodeit.com.project;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.wecancodeit.com.project.models.*;
+import org.wecancodeit.com.project.models.Package;
 import org.wecancodeit.com.project.repositories.*;
 
 import javax.annotation.Resource;
@@ -20,6 +21,8 @@ public class Populator implements CommandLineRunner {
     private IslandRepository islandRepo;
     @Resource
     private OceanRepository oceanRepo;
+    @Resource
+    private PackageRepository packageRepo;
 
     @Override
     public void run(String... args) throws Exception {
@@ -235,6 +238,15 @@ public class Populator implements CommandLineRunner {
         islandRepo.save(northIsland);
         Island aucklandIsland = new Island("aucklandIsland", newZealand, oceania, newZealandIslands,"/images/AuklandIsland.png");
         islandRepo.save(aucklandIsland);
+        Package daring = new Package("daringPackage", "Island hopping and shark feeding. If you can get past their ginormous size and teeth, you'll feel your heartbeat calming down and end up having one of the best experiences seeing them up close and personal. Are you up for the thrill?",snakeIsland,miniloc,bigLagoon);
+        Package luxury = new Package("luxuryPackage", "The extraordinary, the adventure and the exclusivity is all part of our philosophy. Infinite shades of azure. Secluded atolls. Imagine yourself in a luxurious yacht getting lost in island clusters. Sail away and visit stunning islands where all amenities of a luxury hotel can be found.",sal,fogo,santigo);
+        Package getWrecked = new Package("getWreckedPackage","Go island hopping and explore historic shipwrecks and indigenous underwater sites in its waters. The indigenous underwater heritage overtime blends with the oceanic environment creating a home to most marine life-fish and crustaceans.",kahoolawe,molokai,lanai);
+        packageRepo.save(daring);
+        packageRepo.save(luxury);
+        packageRepo.save(getWrecked);
+
+
+
 
 
 
