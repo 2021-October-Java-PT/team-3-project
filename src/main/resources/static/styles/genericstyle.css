@@ -66,6 +66,20 @@ header .logo{
 #menu-bar{
     display: none;
 }
+h1{
+    color: #545454;
+    font-weight: 600;
+    font-size: 75px;
+    margin: 10px 0 15px 0;
+    text-align: center;
+}
+img{
+    width: 1000px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 footer{
 	position: relative;
