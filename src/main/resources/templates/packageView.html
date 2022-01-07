@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/genericstyle.css">
 
-    <title>islands</title>
+    <title>package</title>
 </head>
 <header>
     <a th:href="@{/home}"><img class="logo" src="images/logo2.png" alt="logo"></a>
@@ -46,12 +46,13 @@
     </div>
 </header>
 <body>
-<h1>Islands</h1>
+<h1>package</h1>
 
-<h2 th:each="island: ${islands}"><a th:href="@{/island(id=${island.id})}" th:text="${island.name}"></a></h2>
-
-<p><a id="clustersButton" th:href="@{/islandClusters}">Back to Island Clusters List</a></p>
-
+<h2 th:text="${package.name}"></h2>
+<p th:text="${package.description}"></p>
+<ul>
+    <li th:each="island: ${package.islands}"><a th:href="@{/island(id=${island.id})}" th:text="${island.name}"></a></li>
+</ul>
 <footer class="footer-content">
     <div class="footer-left">
         <img src="assets\logo2.png">

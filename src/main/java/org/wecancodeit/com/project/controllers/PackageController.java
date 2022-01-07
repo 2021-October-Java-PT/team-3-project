@@ -16,10 +16,10 @@ public class PackageController {
     @RequestMapping("/packages")
     public String findAllPackages(Model model) {
         model.addAttribute("packages", packageRepo.findAll());
-        return "packageView";
+        return "packagesView";
     }
 
-    @RequestMapping("/packages")
+    @RequestMapping("/package")
     public String findOnePackage(@RequestParam(value = "id") Long id, Model model) {
         model.addAttribute("package", packageRepo.findById(id).get());
         return "packageView";

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/genericstyle.css">
-    <title>Island Clusters</title>
+    <title>Packages</title>
 </head>
 
 <header>
@@ -46,8 +46,8 @@
     </div>
 </header>
 <body>
-<h1>Island Clusters</h1>
-<h2 th:each="islandCluster: ${islandClusters}"><a th:href="@{/islandCluster(id=${islandCluster.id})}" th:text="${islandCluster.name}"></a></h2>
+<h1>Packages</h1>
+<h2 th:each="package: ${packages}"><a th:href="@{/package(id=${package.id})}" th:text="${package.name}"></a></h2>
 
 <p><a id="countriesButton" th:href="@{/countries}">Back to Countries List</a></p>
 
